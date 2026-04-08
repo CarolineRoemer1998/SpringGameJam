@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ji4vcdy8v3j2"]
+
+[ext_resource type="Texture2D" uid="uid://dw5ggpwww7on8" path="res://Art Tests/10x10, 16px, 320x180px.png" id="1_k4b76"]
+[ext_resource type="PackedScene" uid="uid://c63yfmncrvld3" path="res://Player Character.tscn" id="2_gy7eo"]
+
+[node name="TestScene" type="Node2D" unique_id=558578975]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1453483324]
+position = Vector2(160, 90)
+texture = ExtResource("1_k4b76")
+
+[node name="CharacterBody2D" parent="." unique_id=1952387494 instance=ExtResource("2_gy7eo")]
+position = Vector2(160, 87)
+motion_mode = 1

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c0cmie1w3ijox"]
 
+[ext_resource type="Texture2D" uid="uid://dfvmosn4a0xt8" path="res://Art Tests/Daisy4.png" id="1_4s67x"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t82jw"]
 size = Vector2(8, 8)
 
@@ -14,7 +16,7 @@ font_size = 2
 shape = SubResource("RectangleShape2D_t82jw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1743221350]
-region_enabled = true
+texture = ExtResource("1_4s67x")
 region_rect = Rect2(14.74, 14.34, 8, 8)
 
 [node name="Control" type="Control" parent="." unique_id=742246800]

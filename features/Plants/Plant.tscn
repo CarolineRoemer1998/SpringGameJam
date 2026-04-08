@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c0cmie1w3ijox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t82jw"]
+size = Vector2(8, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t82jw"]
+font_size = 2
+
+[node name="Plant" type="Node2D" unique_id=843263416]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=765912287]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1805317987]
+shape = SubResource("RectangleShape2D_t82jw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1743221350]
+region_enabled = true
+region_rect = Rect2(14.74, 14.34, 8, 8)
+
+[node name="Control" type="Control" parent="." unique_id=742246800]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Label" parent="Control" unique_id=2012148202]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 4.0
+text = "0"
+label_settings = SubResource("LabelSettings_t82jw")
+horizontal_alignment = 2
+vertical_alignment = 2

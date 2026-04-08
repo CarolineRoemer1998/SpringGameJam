@@ -9,10 +9,8 @@ size = Vector2(8, 8)
 [sub_resource type="LabelSettings" id="LabelSettings_t82jw"]
 font_size = 14
 
-[node name="Plant" type="Node2D" unique_id=843263416 node_paths=PackedStringArray("visual", "progressLabel")]
+[node name="Plant" type="Node2D" unique_id=843263416]
 script = ExtResource("1_f32r6")
-visual = NodePath("Sprite2D")
-progressLabel = NodePath("Control/Panel")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=765912287]
 

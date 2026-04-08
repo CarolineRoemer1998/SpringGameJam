@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djcs4qmctpsp0"]
+
+[ext_resource type="Script" uid="uid://2wxt44s8bsuh" path="res://features/Plants/PlantData.gd" id="1_62d5a"]
+
+[node name="Daisy" type="Node2D" unique_id=1717190645]
+script = ExtResource("1_62d5a")
+growStageSprites = Array[Sprite2D]([null, null, null, null])
+metadata/_custom_type_script = "uid://2wxt44s8bsuh"

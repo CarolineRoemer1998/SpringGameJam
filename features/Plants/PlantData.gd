@@ -4,9 +4,11 @@ class_name Plant
 @export var PlantName:String
 @export var last_grow_Phase:int
 @export var allergyPhase:int
-@export var visual:Sprite2D
 
-@export var progressLabel:Label
+@onready var visual:Sprite2D = $Sprite2D
+@onready var progressLabel:Label = $Control/Panel
+
+@export var growStageSprites:Array[CompressedTexture2D]
 
 var plantState: Enums.plantStates
 var current_phase:int = 6

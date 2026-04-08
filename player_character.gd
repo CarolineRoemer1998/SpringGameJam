@@ -9,11 +9,11 @@ func _physics_process(_delta):
 	
 	if Input.is_action_pressed("ui_right"):
 		direction.x = 1
-		sprite.flip_h = false # Schaut nach rechts
-		sprite.play("walk")    # Falls du eine Lauf-Animation hast
+		sprite.flip_h = false
+		sprite.play("walk")    
 	elif Input.is_action_pressed("ui_left"):
 		direction.x = -1
-		sprite.flip_h = true  # Spiegelt das Bild nach links
+		sprite.flip_h = true  
 		sprite.play("walk")
 	elif Input.is_action_pressed("ui_down"):
 		direction.y = 1
@@ -22,7 +22,7 @@ func _physics_process(_delta):
 		direction.y = -1
 		sprite.play("walk")
 	else:
-		sprite.play("idle")   # Bleibt stehen, wenn keine Taste gedrückt wird
+		sprite.play("idle")  
 		
 	velocity = direction * SPEED
 	move_and_slide()

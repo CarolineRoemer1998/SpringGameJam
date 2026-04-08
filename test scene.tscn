@@ -10,5 +10,5 @@ position = Vector2(160, 90)
 texture = ExtResource("1_k4b76")
 
 [node name="CharacterBody2D" parent="." unique_id=1952387494 instance=ExtResource("2_gy7eo")]
-position = Vector2(160, 87)
+position = Vector2(160, 90)
 motion_mode = 1

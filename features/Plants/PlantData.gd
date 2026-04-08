@@ -2,19 +2,22 @@ extends Node2D
 class_name Plant
 
 @export var PlantName:String
-@export var visual:Image
 @export var last_grow_Phase:int
 @export var allergyPhase:int
+@export var visual:Sprite2D
+
+@export var progressLabel:Label
 
 var plantState: Enums.plantStates
-var current_phase:int = 0
+var current_phase:int = 6
 
 func _ready() -> void:
 	SignalBus.stepped.connect(on_stepped)
 	
 func on_stepped():
 	current_phase += 1
-
+	update_label()
+	
 	# if current phase is smaller or equal last grow phase, change state to sprout
 	if current_phase <= last_grow_Phase:
 		update_plant_state(Enums.plantStates.SPROUT)
@@ -33,3 +36,6 @@ func update_plant_state(state:Enums.plantStates):
 	
 	# change visuals
 	# if state changes to allergies, do explosions
+
+func update_label():
+	progressLabel.text = str(current_phase)

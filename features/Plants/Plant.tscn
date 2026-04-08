@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://c0cmie1w3ijox"]
 
 [ext_resource type="Texture2D" uid="uid://dfvmosn4a0xt8" path="res://Art Tests/Daisy4.png" id="1_4s67x"]
+[ext_resource type="Script" uid="uid://2wxt44s8bsuh" path="res://features/Plants/PlantData.gd" id="1_f32r6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t82jw"]
 size = Vector2(8, 8)
 
 [sub_resource type="LabelSettings" id="LabelSettings_t82jw"]
-font_size = 2
+font_size = 14
 
-[node name="Plant" type="Node2D" unique_id=843263416]
+[node name="Plant" type="Node2D" unique_id=843263416 node_paths=PackedStringArray("visual", "progressLabel")]
+script = ExtResource("1_f32r6")
+visual = NodePath("Sprite2D")
+progressLabel = NodePath("Control/Panel")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=765912287]
 
@@ -27,8 +31,8 @@ offset_bottom = 40.0
 
 [node name="Panel" type="Label" parent="Control" unique_id=2012148202]
 layout_mode = 0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_right = 23.0
+offset_bottom = 23.0
 text = "0"
 label_settings = SubResource("LabelSettings_t82jw")
 horizontal_alignment = 2

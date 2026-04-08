@@ -16,6 +16,16 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"plant",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"sneeze",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_0teew")
@@ -39,10 +49,10 @@ height = 24.0
 script = ExtResource("1_jig04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1616015640]
-position = Vector2(0, -24)
+position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_jig04")
-animation = &"walk"
+animation = &"sneeze"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1139914070]
-position = Vector2(0, -12)
+position = Vector2(0, -19)
 shape = SubResource("CapsuleShape2D_qw7l3")

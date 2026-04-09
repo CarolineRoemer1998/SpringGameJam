@@ -9,12 +9,13 @@ class_name Plant
 @onready var progressLabel:Label = $Control/Panel
 
 var plantState: Enums.plantStates = Enums.plantStates.SPROUT
-var current_phase:int = 2
+var current_phase:int = 0
 
 func _ready() -> void:
 	print("initial state: ", plantState)
 	SignalBus.stepped.connect(on_stepped)
-	on_stepped()
+	
+	#on_stepped()
 	
 func on_stepped():
 	match plantState:
@@ -22,6 +23,7 @@ func on_stepped():
 			update_plant_state(Enums.plantStates.DEAD)
 			
 		Enums.plantStates.SPROUT:
+			print("stepping as sprout")
 			current_phase += 1
 			update_label()
 			
@@ -37,6 +39,9 @@ func on_stepped():
 			if current_phase <= allergyPhase:
 				update_plant_state(Enums.plantStates.ALLERGIES)
 		
+		_:
+			print("no plant State match found")
+
 func update_plant_state(state:Enums.plantStates):
 	print("updating state: ", state)
 	plantState = state

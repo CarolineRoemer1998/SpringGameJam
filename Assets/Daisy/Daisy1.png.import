@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba7ythrxc80wv"
-path="res://.godot/imported/Daisy1.png-642fe3a303d2b6b92efe3c035425a6ae.ctex"
+path="res://.godot/imported/Daisy1.png-3bdf0246c016c69084577963ca41ede9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Tests/Daisy1.png"
-dest_files=["res://.godot/imported/Daisy1.png-642fe3a303d2b6b92efe3c035425a6ae.ctex"]
+source_file="res://Assets/Daisy/Daisy1.png"
+dest_files=["res://.godot/imported/Daisy1.png-3bdf0246c016c69084577963ca41ede9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1f1sghhuk8na"
-path="res://.godot/imported/Daisy3.png-7c10504f42d36e37f04cf9ba538e4a05.ctex"
+uid="uid://c2apaoh1yuceo"
+path="res://.godot/imported/Player Character.png-9706458b27a2525bd1b6516eb11d508d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Tests/Daisy3.png"
-dest_files=["res://.godot/imported/Daisy3.png-7c10504f42d36e37f04cf9ba538e4a05.ctex"]
+source_file="res://Assets/Player/Player Character.png"
+dest_files=["res://.godot/imported/Player Character.png-9706458b27a2525bd1b6516eb11d508d.ctex"]
 
 [params]
 

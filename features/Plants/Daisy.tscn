@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://djcs4qmctpsp0"]
 
 [ext_resource type="Script" uid="uid://2wxt44s8bsuh" path="res://features/Plants/PlantData.gd" id="1_62d5a"]
-[ext_resource type="Texture2D" uid="uid://ba7ythrxc80wv" path="res://Art Tests/Daisy1.png" id="2_cdfcv"]
-[ext_resource type="Texture2D" uid="uid://ddgm807p1typb" path="res://Art Tests/Daisy2.png" id="3_o7ju5"]
-[ext_resource type="Texture2D" uid="uid://d1f1sghhuk8na" path="res://Art Tests/Daisy3.png" id="4_on04d"]
-[ext_resource type="Texture2D" uid="uid://dfvmosn4a0xt8" path="res://Art Tests/Daisy4.png" id="5_tet2d"]
+[ext_resource type="Texture2D" uid="uid://ba7ythrxc80wv" path="res://Assets/Daisy/Daisy1.png" id="2_cdfcv"]
+[ext_resource type="Texture2D" uid="uid://ddgm807p1typb" path="res://Assets/Daisy/Daisy2.png" id="3_o7ju5"]
+[ext_resource type="Texture2D" uid="uid://d1f1sghhuk8na" path="res://Assets/Daisy/Daisy3.png" id="4_on04d"]
+[ext_resource type="Texture2D" uid="uid://dfvmosn4a0xt8" path="res://Assets/Daisy/Daisy4.png" id="5_tet2d"]
 
 [node name="Daisy" type="Node2D" unique_id=1717190645]
 script = ExtResource("1_62d5a")

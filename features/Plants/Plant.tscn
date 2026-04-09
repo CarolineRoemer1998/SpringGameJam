@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0cmie1w3ijox"]
 
-[ext_resource type="Texture2D" uid="uid://dfvmosn4a0xt8" path="res://Art Tests/Daisy4.png" id="1_4s67x"]
+[ext_resource type="Texture2D" uid="uid://dfvmosn4a0xt8" path="res://Assets/Daisy/Daisy4.png" id="1_4s67x"]
 [ext_resource type="Script" uid="uid://2wxt44s8bsuh" path="res://features/Plants/PlantData.gd" id="1_f32r6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t82jw"]

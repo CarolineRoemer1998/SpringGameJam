@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://p0ore0ucl7y6"]
+
+[ext_resource type="Texture2D" uid="uid://dw5ggpwww7on8" path="res://Art Tests/10x10, 16px, 320x180px.png" id="1_5sg27"]
+[ext_resource type="PackedScene" uid="uid://f3gsxpb5ahmf" path="res://features/grid/grid.tscn" id="1_d3un6"]
+[ext_resource type="PackedScene" uid="uid://c8lns3bg2q3gc" path="res://features/player/player.tscn" id="3_8xnxh"]
+
+[node name="Game" type="Node2D" unique_id=54124548]
+
+[node name="Visuals" type="Node2D" parent="." unique_id=355403943]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals" unique_id=2081939465]
+position = Vector2(160, 88)
+texture = ExtResource("1_5sg27")
+
+[node name="Grid" parent="." unique_id=991801364 instance=ExtResource("1_d3un6")]
+position = Vector2(96, 24)
+
+[node name="Player" type="Node2D" parent="." unique_id=163122118]
+
+[node name="Player" parent="Player" unique_id=767698206 instance=ExtResource("3_8xnxh")]
+position = Vector2(96, 24)

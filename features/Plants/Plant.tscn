@@ -1,25 +1,75 @@
 [gd_scene format=3 uid="uid://c0cmie1w3ijox"]
 
-[ext_resource type="Texture2D" uid="uid://dfvmosn4a0xt8" path="res://Assets/Daisy/Daisy4.png" id="1_4s67x"]
-[ext_resource type="Script" uid="uid://2wxt44s8bsuh" path="res://features/Plants/PlantData.gd" id="1_f32r6"]
+[ext_resource type="Script" uid="uid://2wxt44s8bsuh" path="res://features/Plants/Plant.gd" id="1_f32r6"]
+[ext_resource type="Texture2D" uid="uid://bcsmpr22nufun" path="res://Assets/Daisy/daisy_spritesheet.png" id="6_etvce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t82jw"]
 size = Vector2(8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq4ht"]
+atlas = ExtResource("6_etvce")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k080"]
+atlas = ExtResource("6_etvce")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s75i2"]
+atlas = ExtResource("6_etvce")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yumax"]
+atlas = ExtResource("6_etvce")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8pce"]
+atlas = ExtResource("6_etvce")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbjwr"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq4ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k080")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s75i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yumax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8pce")
+}],
+"loop": true,
+"name": &"growing",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t82jw"]
 font_size = 14
 
 [node name="Plant" type="Node2D" unique_id=843263416]
 script = ExtResource("1_f32r6")
+last_grow_Phase = 3
+allergyPhase = 5
 
 [node name="Area2D" type="Area2D" parent="." unique_id=765912287]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1805317987]
 shape = SubResource("RectangleShape2D_t82jw")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1743221350]
-texture = ExtResource("1_4s67x")
-region_rect = Rect2(14.74, 14.34, 8, 8)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1544294672]
+sprite_frames = SubResource("SpriteFrames_dbjwr")
+animation = &"growing"
 
 [node name="Control" type="Control" parent="." unique_id=742246800]
 layout_mode = 3

@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://p0ore0ucl7y6"]
+[gd_scene format=3 uid="uid://lem1ogoa4kp7"]
 
 [ext_resource type="Texture2D" uid="uid://dw5ggpwww7on8" path="res://Art Tests/10x10, 16px, 320x180px.png" id="1_5sg27"]
 [ext_resource type="PackedScene" uid="uid://f3gsxpb5ahmf" path="res://features/grid/grid.tscn" id="1_d3un6"]
-[ext_resource type="PackedScene" uid="uid://c8lns3bg2q3gc" path="res://features/player/player.tscn" id="3_8xnxh"]
+[ext_resource type="PackedScene" path="res://features/player/player.tscn" id="3_8xnxh"]
 
 [node name="Game" type="Node2D" unique_id=54124548]
 

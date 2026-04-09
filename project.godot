@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="SpringGameJam"
-run/main_scene="uid://p0ore0ucl7y6"
+run/main_scene="uid://lem1ogoa4kp7"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstreamconfig/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]
 
-Helper="*uid://ci4bpcm7xnm22"
+SignalBus="*uid://b6hruy0wkn8fp"
+Helper="*uid://cg0h6fvp3lr13"
 
 [display]
 

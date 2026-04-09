@@ -9,8 +9,19 @@ const STEP_LENGTH_IN_PIXELS = 16
 const SPEED := 100
 const STEP_DURATION_IN_SECONDS := 0.75
 
-var target_position := Vector2.ZERO
 var delta_time := 0.0
+var target_position := Vector2.ZERO:
+	set(value):
+		if value[0] < Grid.GRID_X_MIN:
+			value[0] = Grid.GRID_X_MIN
+		if value[0] > Grid.GRID_X_MAX:
+			value[0] = Grid.GRID_X_MAX
+		if value[1] < Grid.GRID_Y_MIN:
+			value[1] = Grid.GRID_Y_MIN
+		if value[1] > Grid.GRID_Y_MAX:
+			value[1] = Grid.GRID_Y_MAX
+		target_position = value
+
 
 func _ready():
 	global_position = Helper.get_position_from_tile(starting_tile)

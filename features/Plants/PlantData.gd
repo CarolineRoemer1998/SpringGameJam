@@ -36,6 +36,8 @@ func update_plant_state(state:Enums.plantStates):
 	plantState = state
 	SignalBus.plant_changed_state.emit(self,state)
 	
+	
+	
 	# change visuals
 	# if state changes to allergies, do explosions
 

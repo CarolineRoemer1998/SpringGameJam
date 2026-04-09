@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://26641vmy581p"]
 
 [ext_resource type="Script" uid="uid://grd0mkuw526a" path="res://features/tiles/tile.gd" id="1_fdthk"]
+[ext_resource type="PackedScene" uid="uid://c0cmie1w3ijox" path="res://features/Plants/Plant.tscn" id="2_7bcs2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdthk"]
 size = Vector2(8, 8)
@@ -9,6 +10,7 @@ size = Vector2(8, 8)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_fdthk")
+plant = ExtResource("2_7bcs2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=321358636]
 shape = SubResource("RectangleShape2D_fdthk")

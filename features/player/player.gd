@@ -30,10 +30,9 @@ func _ready():
 func _physics_process(delta):
 	if global_position != target_position:
 		move_player(delta)
-	
 	else:
 		handle_direction_input()
-
+		handle_action_input()
 
 func move_player(delta: float):
 	sprite.play("walk") 
@@ -61,3 +60,12 @@ func handle_direction_input():
 		## TODO: check if tile is free
 		target_position = global_position + Vector2(1*STEP_LENGTH_IN_PIXELS, 0)
 		sprite.flip_h = false
+
+func handle_action_input():
+	if Input.is_action_just_pressed("action_plant"):
+		if check_can_plant_on_current_tile():
+			SignalBus.seed_planted.emit(global_position, "Daisy") ## TODO: "Daisy" später zu enum oder ressource-type ändern
+
+func check_can_plant_on_current_tile():
+	var tile_has_plant = not Helper.get_collision_on_area(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d()).is_empty()
+	return not tile_has_plant

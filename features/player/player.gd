@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-@export var starting_tile := Vector2(5, 9)
+@export var starting_tile := Vector2(5, 1)
 
 @onready var sprite = $Visuals/AnimatedSprite2D
 

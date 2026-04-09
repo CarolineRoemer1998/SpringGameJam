@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bhcp3xje2ivai"]
+
+[ext_resource type="Script" uid="uid://b0gmhawh2e20e" path="res://features/player/player.gd" id="1_sjcu7"]
+[ext_resource type="Texture2D" uid="uid://c2apaoh1yuceo" path="res://Assets/Player/Player Character.png" id="2_fcb3x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcb3x"]
+size = Vector2(8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fcb3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fcb3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fcb3x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"plant",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"sneeze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fcb3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fcb3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fcb3x")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1727918670]
+collision_mask = 0
+script = ExtResource("1_sjcu7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313411677]
+shape = SubResource("RectangleShape2D_fcb3x")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=1202852100]
+position = Vector2(0, 7)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1744544012]
+position = Vector2(0, -31)
+sprite_frames = SubResource("SpriteFrames_fcb3x")
+animation = &"idle"

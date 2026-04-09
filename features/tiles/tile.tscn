@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://26641vmy581p"]
+
+[ext_resource type="Script" uid="uid://grd0mkuw526a" path="res://features/tiles/tile.gd" id="1_fdthk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdthk"]
+size = Vector2(8, 8)
+
+[node name="Tile" type="StaticBody2D" unique_id=592765346]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_fdthk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=321358636]
+shape = SubResource("RectangleShape2D_fdthk")
+
+[node name="Contents" type="Node2D" parent="." unique_id=823169854]

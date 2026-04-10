@@ -1,3 +1,4 @@
+# Helper.gd
 extends Node
 
 const LAYER_BIT_PLAYER := 0

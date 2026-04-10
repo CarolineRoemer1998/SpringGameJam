@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlantData" format=3 uid="uid://blak745amd86c"]
+
+[ext_resource type="Script" uid="uid://damt74uwewuib" path="res://features/Plants/PlantData.gd" id="1_m6xml"]
+[ext_resource type="SpriteFrames" uid="uid://cvykwo7bppqcv" path="res://features/Plants/SpriteFramesPerType/SpriteFramesDaisy.tres" id="2_lxbya"]
+
+[resource]
+script = ExtResource("1_m6xml")
+plant_name = "Daisy"
+sprite_frames = ExtResource("2_lxbya")
+last_grow_phase = 3
+allergy_phase = 5
+metadata/_custom_type_script = "uid://damt74uwewuib"

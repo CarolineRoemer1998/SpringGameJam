@@ -72,22 +72,27 @@ func check_can_walk_on_target_tile(dir: Vector2):
 
 func handle_action_input():
 	if Input.is_action_just_pressed("action_plant"):
-		if check_can_plant_on_current_tile():
-			print("planted seed")
-			SignalBus.seed_planted.emit(global_position, "Daisy") ## TODO: "Daisy" später zu enum oder ressource-type ändern
-			print("Planting Seed: Success!")
-		else:
-			print("Planting Seed: Failed!")
-	
+		plant_seed()
 	if Input.is_action_just_pressed("action_collect"):
-		var plant_on_tile : Plant = Helper.check_for_collider_on_position(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d())
-		#print("--- ", plant_on_tile.current_phase)
-		if plant_on_tile != null:# and plant_on_tile.current_phase == Enums.plantStates.FULLY_GROWN:
-			SignalBus.flower_collected.emit(plant_on_tile)
-			print("Collecting Flower: Success!")
-		else:
-			print("Collecting Flower: Failed!")
-	
+		pick_flower()
+
+func plant_seed():
+	if check_can_plant_on_current_tile():
+		SignalBus.seed_planted.emit(global_position, "Daisy") ## TODO: "Daisy" später zu enum oder ressource-type ändern
+		print("Planting Seed: Success!")
+	else:
+		print("Planting Seed: Failed!")
+
+func pick_flower():
+	var flower_on_tile : Plant = Helper.check_for_collider_on_position(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d())
+	var state = flower_on_tile.plantState
+	print(Enums.plantStates.find_key(state))
+	if flower_on_tile != null and flower_on_tile.plantState == Enums.plantStates.FULLY_GROWN:
+		SignalBus.flower_collected.emit(flower_on_tile)
+		print("Collecting Flower: Success!")
+	else:
+		print("Collecting Flower: Failed!")
+
 func check_can_plant_on_current_tile():
 	var tile_has_plant = Helper.check_for_collider_on_position(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d()) != null
 	return not tile_has_plant

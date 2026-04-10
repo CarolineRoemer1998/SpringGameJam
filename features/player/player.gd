@@ -76,8 +76,6 @@ func plant_seed():
 
 func pick_flower():
 	var flower_on_tile : Plant = Helper.check_for_collider_on_position(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d())
-	var state = flower_on_tile.plantState
-	print(Enums.plantStates.find_key(state))
 	if flower_on_tile != null and flower_on_tile.plantState == Enums.plantStates.FULLY_GROWN:
 		SignalBus.flower_collected.emit(flower_on_tile)
 		print("Collecting Flower: Success!")

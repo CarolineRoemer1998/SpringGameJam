@@ -28,7 +28,7 @@ func set_type():
 	visual.sprite_frames = plant_data.sprite_frames.duplicate(true)
 
 func on_stepped(player_position):
-	if player_position == global_position:
+	if player_position == global_position and plantState==Enums.plantStates.SPROUT:
 		update_plant_state(Enums.plantStates.DEAD)
 		SignalBus.plant_changed_state.emit(self, Enums.plantStates.DEAD)
 	

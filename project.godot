@@ -28,6 +28,7 @@ StatsTracker="*uid://e72wu5aad3pi"
 
 window/size/viewport_width=320
 window/size/viewport_height=180
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]

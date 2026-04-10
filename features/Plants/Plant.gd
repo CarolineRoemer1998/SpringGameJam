@@ -89,8 +89,8 @@ func update_plant_state(state:Enums.plantStates):
 		Enums.plantStates.ALLERGIES:
 			visual.modulate = Color(1.5, 1.5, 0.0) # Temporary visual for allergical
 			var new_pollen = pollen.instantiate()
-			new_pollen.global_position = global_position
 			add_child(new_pollen)
+			new_pollen.global_position = global_position
 			#print("Doing allergies, but no code yet")
 
 func get_picked(plant: Plant):

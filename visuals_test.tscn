@@ -13,46 +13,50 @@
 
 [node name="Visuals Test" type="Node2D" unique_id=42785543]
 
-[node name="behind grid" type="Sprite2D" parent="." unique_id=361483030]
+[node name="behind player" type="Node2D" parent="." unique_id=70456112]
+
+[node name="behind grid" type="Sprite2D" parent="behind player" unique_id=361483030]
 position = Vector2(160, 90)
 texture = ExtResource("1_skmcs")
 
-[node name="grid" type="Sprite2D" parent="." unique_id=779853875]
+[node name="grid" type="Sprite2D" parent="behind player" unique_id=779853875]
 position = Vector2(160, 90)
 texture = ExtResource("2_ky6df")
 
-[node name="Shed" type="Sprite2D" parent="." unique_id=1715394506]
+[node name="Shed" type="Sprite2D" parent="behind player" unique_id=1715394506]
 position = Vector2(160, 90)
 texture = ExtResource("3_32iso")
 
-[node name="tree dark edge" type="Sprite2D" parent="." unique_id=1010677696]
-position = Vector2(141, 49)
-texture = ExtResource("4_88l1j")
-
-[node name="tree dark edge2" type="Sprite2D" parent="." unique_id=903472863]
-position = Vector2(191, 34)
-texture = ExtResource("4_88l1j")
-
-[node name="fence top" type="Sprite2D" parent="." unique_id=1429286162]
-position = Vector2(160, 90)
-texture = ExtResource("5_jlqn0")
-
-[node name="pond" type="Sprite2D" parent="." unique_id=953605290]
+[node name="pond" type="Sprite2D" parent="behind player" unique_id=953605290]
 position = Vector2(160, 90)
 texture = ExtResource("6_ada4c")
 
-[node name="fence bottom" type="Sprite2D" parent="." unique_id=145795933]
-position = Vector2(160, 90)
-texture = ExtResource("7_v65kc")
-
-[node name="cat" type="Sprite2D" parent="." unique_id=1745982815]
-position = Vector2(160, 90)
-texture = ExtResource("8_adt4w")
-
-[node name="grass above" type="Sprite2D" parent="." unique_id=167916256]
+[node name="grass above" type="Sprite2D" parent="behind player" unique_id=167916256]
 position = Vector2(160, 90)
 texture = ExtResource("9_e7khm")
 
-[node name="tree light edge" type="Sprite2D" parent="." unique_id=814386711]
+[node name="tree dark edge" type="Sprite2D" parent="behind player" unique_id=1010677696]
+position = Vector2(141, 49)
+texture = ExtResource("4_88l1j")
+
+[node name="tree dark edge2" type="Sprite2D" parent="behind player" unique_id=903472863]
+position = Vector2(191, 34)
+texture = ExtResource("4_88l1j")
+
+[node name="fence top" type="Sprite2D" parent="behind player" unique_id=1429286162]
+position = Vector2(160, 90)
+texture = ExtResource("5_jlqn0")
+
+[node name="tree light edge" type="Sprite2D" parent="behind player" unique_id=814386711]
 position = Vector2(166, 65)
 texture = ExtResource("10_f45lo")
+
+[node name="above player" type="Node2D" parent="." unique_id=1320844040]
+
+[node name="fence bottom" type="Sprite2D" parent="above player" unique_id=145795933]
+position = Vector2(160, 90)
+texture = ExtResource("7_v65kc")
+
+[node name="cat" type="Sprite2D" parent="above player" unique_id=1745982815]
+position = Vector2(160, 90)
+texture = ExtResource("8_adt4w")

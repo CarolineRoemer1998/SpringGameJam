@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0cmie1w3ijox"]
 
 [ext_resource type="Script" uid="uid://2wxt44s8bsuh" path="res://features/Plants/Plant.gd" id="1_f32r6"]
+[ext_resource type="Theme" uid="uid://tf532vcg407e" path="res://Assets/UI/theme.tres" id="3_hk83q"]
 [ext_resource type="Texture2D" uid="uid://bcsmpr22nufun" path="res://Assets/Daisy/daisy_spritesheet.png" id="6_etvce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t82jw"]
@@ -85,6 +86,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("3_hk83q")
 
 [node name="Panel" type="Label" parent="Control" unique_id=2012148202]
 layout_mode = 0

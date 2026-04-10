@@ -8,6 +8,7 @@ enum PLANT_TYPE {Daisy, Sunflower}
 @onready var visual:AnimatedSprite2D = $AnimatedSprite2D
 @onready var progressLabel:Label = $Control/Panel
 
+const pollen = preload("uid://c6oott1jjxued")
 var plantState: Enums.plantStates = Enums.plantStates.SPROUT
 var current_phase:int = 0
 
@@ -52,6 +53,12 @@ func on_stepped(player_position):
 			# if current phase equals or is higher than allergy phase, change state appropriately, change state to allergies
 			if current_phase >= plant_data.allergy_phase:
 				update_plant_state(Enums.plantStates.ALLERGIES)
+
+		Enums.plantStates.ALLERGIES:
+			pass
+			
+		Enums.plantStates.DEAD:
+			pass
 		_:
 			print("no plant State match found")
 
@@ -81,7 +88,10 @@ func update_plant_state(state:Enums.plantStates):
 
 		Enums.plantStates.ALLERGIES:
 			visual.modulate = Color(1.5, 1.5, 0.0) # Temporary visual for allergical
-			print("Doing allergies, but no code yet")
+			var new_pollen = pollen.instantiate()
+			add_child(new_pollen)
+			new_pollen.global_position = global_position
+			#print("Doing allergies, but no code yet")
 
 func get_picked(plant: Plant):
 	if plant == self:

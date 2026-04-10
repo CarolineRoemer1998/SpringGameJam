@@ -21,7 +21,7 @@ func _ready() -> void:
 	SignalBus.plant_changed_state.connect(track_plant_states)
 	SignalBus.sneezed.connect(track_sneezes)
 	
-func track_steps():
+func track_steps(position: Vector2):
 	var steps = Stats.get("Steps")
 	steps += 1
 	Stats.set("Steps", steps)

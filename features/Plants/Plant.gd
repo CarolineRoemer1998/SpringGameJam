@@ -21,11 +21,14 @@ func _ready() -> void:
 	
 	#on_stepped()
 	
-func on_stepped():
+func on_stepped(player_position):
+	#print("player position: ", player_position)
+	#print("plant position: ", global_position)
+	if player_position == global_position:
+		update_plant_state(Enums.plantStates.DEAD)
+		SignalBus.plant_changed_state.emit(self, Enums.plantStates.DEAD)
+	
 	match plantState:
-		Enums.plantStates.DEAD:
-			update_plant_state(Enums.plantStates.DEAD)
-			
 		Enums.plantStates.SPROUT:
 			#sprint("stepping as sprout")
 			current_phase += 1

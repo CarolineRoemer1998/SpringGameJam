@@ -43,7 +43,7 @@ func move_player(delta: float):
 		global_position = target_position
 		sprite.play("idle")
 		delta_time = 0.0
-		SignalBus.stepped.emit()
+		SignalBus.stepped.emit(global_position)
 
 func handle_direction_input():
 	if Input.is_action_pressed("move_up"):

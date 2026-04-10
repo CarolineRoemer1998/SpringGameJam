@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c88towqauwm54"
-path="res://.godot/imported/grid.png-f42dd6578e143b2839089eaaf62c3d9f.ctex"
+uid="uid://cqe2kf2scb0jj"
+path="res://.godot/imported/tree dark edge.png-e7a71eb0b5d82344a5551f55e270fbf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/grid.png"
-dest_files=["res://.godot/imported/grid.png-f42dd6578e143b2839089eaaf62c3d9f.ctex"]
+source_file="res://Assets/environment/tree dark edge.png"
+dest_files=["res://.godot/imported/tree dark edge.png-e7a71eb0b5d82344a5551f55e270fbf5.ctex"]
 
 [params]
 

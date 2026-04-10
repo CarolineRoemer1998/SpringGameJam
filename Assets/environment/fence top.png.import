@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhnnf2mobia7n"
-path="res://.godot/imported/tree light edge.png-3aca220b8074d480cd469ff25f099644.ctex"
+uid="uid://dlcbymfiqvkma"
+path="res://.godot/imported/fence top.png-6d9f286e916cf202a4fa595b051c8304.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tree light edge.png"
-dest_files=["res://.godot/imported/tree light edge.png-3aca220b8074d480cd469ff25f099644.ctex"]
+source_file="res://Assets/environment/fence top.png"
+dest_files=["res://.godot/imported/fence top.png-6d9f286e916cf202a4fa595b051c8304.ctex"]
 
 [params]
 

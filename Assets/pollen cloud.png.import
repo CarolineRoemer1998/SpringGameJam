@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc0p76hyjbd8w"
-path="res://.godot/imported/grass above.png-df426d6239c29b2314964b1c2312b489.ctex"
+uid="uid://cgf7olex5gkho"
+path="res://.godot/imported/pollen cloud.png-a75ded2604bca4f0eac25fac787bb3c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/grass above.png"
-dest_files=["res://.godot/imported/grass above.png-df426d6239c29b2314964b1c2312b489.ctex"]
+source_file="res://Assets/pollen cloud.png"
+dest_files=["res://.godot/imported/pollen cloud.png-a75ded2604bca4f0eac25fac787bb3c3.ctex"]
 
 [params]
 

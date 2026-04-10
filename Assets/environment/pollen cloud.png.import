@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3jtsart00ndi"
-path="res://.godot/imported/pond.png-17c5a86e961e20cb6400fcce09262880.ctex"
+uid="uid://d0xumfu55hi3d"
+path="res://.godot/imported/pollen cloud.png-a75ded2604bca4f0eac25fac787bb3c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pond.png"
-dest_files=["res://.godot/imported/pond.png-17c5a86e961e20cb6400fcce09262880.ctex"]
+source_file="res://Assets/pollen cloud.png"
+dest_files=["res://.godot/imported/pollen cloud.png-a75ded2604bca4f0eac25fac787bb3c3.ctex"]
 
 [params]
 

@@ -1,18 +1,17 @@
 [gd_scene format=3 uid="uid://lem1ogoa4kp7"]
 
-[ext_resource type="Texture2D" uid="uid://dw5ggpwww7on8" path="res://Assets/10x10, 16px, 320x180px.png" id="1_5sg27"]
 [ext_resource type="PackedScene" uid="uid://f3gsxpb5ahmf" path="res://features/grid/grid.tscn" id="1_d3un6"]
-[ext_resource type="Texture2D" uid="uid://blmuknbxgaj12" path="res://Assets/behind grid.png" id="2_bpu47"]
+[ext_resource type="Texture2D" uid="uid://blmuknbxgaj12" path="res://Assets/environment/behind grid.png" id="2_bpu47"]
 [ext_resource type="PackedScene" uid="uid://bhcp3xje2ivai" path="res://features/player/player.tscn" id="3_8xnxh"]
-[ext_resource type="Texture2D" uid="uid://c88towqauwm54" path="res://Assets/grid.png" id="3_gcgb4"]
-[ext_resource type="Texture2D" uid="uid://dwvuklvr3t4of" path="res://Assets/shed.png" id="4_8bifg"]
-[ext_resource type="Texture2D" uid="uid://3jtsart00ndi" path="res://Assets/pond.png" id="5_r8boq"]
-[ext_resource type="Texture2D" uid="uid://bc0p76hyjbd8w" path="res://Assets/grass above.png" id="6_fdp5g"]
-[ext_resource type="Texture2D" uid="uid://cqe2kf2scb0jj" path="res://Assets/tree dark edge.png" id="7_x0vf6"]
-[ext_resource type="Texture2D" uid="uid://dlcbymfiqvkma" path="res://Assets/fence top.png" id="8_vd6y3"]
-[ext_resource type="Texture2D" uid="uid://dhnnf2mobia7n" path="res://Assets/tree light edge.png" id="9_qj4df"]
-[ext_resource type="Texture2D" uid="uid://b4nbp7tpyy8si" path="res://Assets/fence bottom.png" id="12_8bifg"]
-[ext_resource type="Texture2D" uid="uid://dtv5v3y2a0lgg" path="res://Assets/cat.png" id="13_r8boq"]
+[ext_resource type="Texture2D" uid="uid://c88towqauwm54" path="res://Assets/environment/grid.png" id="3_gcgb4"]
+[ext_resource type="Texture2D" uid="uid://dwvuklvr3t4of" path="res://Assets/environment/shed.png" id="4_8bifg"]
+[ext_resource type="Texture2D" uid="uid://3jtsart00ndi" path="res://Assets/environment/pond.png" id="5_r8boq"]
+[ext_resource type="Texture2D" uid="uid://bc0p76hyjbd8w" path="res://Assets/environment/grass above.png" id="6_fdp5g"]
+[ext_resource type="Texture2D" uid="uid://cqe2kf2scb0jj" path="res://Assets/environment/tree dark edge.png" id="7_x0vf6"]
+[ext_resource type="Texture2D" uid="uid://dlcbymfiqvkma" path="res://Assets/environment/fence top.png" id="8_vd6y3"]
+[ext_resource type="Texture2D" uid="uid://dhnnf2mobia7n" path="res://Assets/environment/tree light edge.png" id="9_qj4df"]
+[ext_resource type="Texture2D" uid="uid://b4nbp7tpyy8si" path="res://Assets/environment/fence bottom.png" id="12_8bifg"]
+[ext_resource type="Texture2D" uid="uid://dtv5v3y2a0lgg" path="res://Assets/environment/cat.png" id="13_r8boq"]
 
 [node name="Game" type="Node2D" unique_id=54124548]
 
@@ -21,7 +20,6 @@ visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals" unique_id=2081939465]
 position = Vector2(160, 88)
-texture = ExtResource("1_5sg27")
 
 [node name="behind player" type="Node2D" parent="." unique_id=1236020727]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwvuklvr3t4of"
-path="res://.godot/imported/shed.png-ccad396f81517d8bff488a56428db3d4.ctex"
+uid="uid://blmuknbxgaj12"
+path="res://.godot/imported/behind grid.png-e72ec1a2df9c89421ae1a66bd12f6c1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/shed.png"
-dest_files=["res://.godot/imported/shed.png-ccad396f81517d8bff488a56428db3d4.ctex"]
+source_file="res://Assets/environment/behind grid.png"
+dest_files=["res://.godot/imported/behind grid.png-e72ec1a2df9c89421ae1a66bd12f6c1f.ctex"]
 
 [params]
 

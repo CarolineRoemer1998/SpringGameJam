@@ -38,6 +38,11 @@ animations = [{
 "name": &"dead",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"exploding",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f32r6")

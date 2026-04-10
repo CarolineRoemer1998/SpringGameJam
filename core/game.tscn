@@ -2,15 +2,64 @@
 
 [ext_resource type="Texture2D" uid="uid://dw5ggpwww7on8" path="res://Assets/10x10, 16px, 320x180px.png" id="1_5sg27"]
 [ext_resource type="PackedScene" uid="uid://f3gsxpb5ahmf" path="res://features/grid/grid.tscn" id="1_d3un6"]
+[ext_resource type="Texture2D" uid="uid://blmuknbxgaj12" path="res://Assets/behind grid.png" id="2_bpu47"]
 [ext_resource type="PackedScene" uid="uid://bhcp3xje2ivai" path="res://features/player/player.tscn" id="3_8xnxh"]
+[ext_resource type="Texture2D" uid="uid://c88towqauwm54" path="res://Assets/grid.png" id="3_gcgb4"]
+[ext_resource type="Texture2D" uid="uid://dwvuklvr3t4of" path="res://Assets/shed.png" id="4_8bifg"]
+[ext_resource type="Texture2D" uid="uid://3jtsart00ndi" path="res://Assets/pond.png" id="5_r8boq"]
+[ext_resource type="Texture2D" uid="uid://bc0p76hyjbd8w" path="res://Assets/grass above.png" id="6_fdp5g"]
+[ext_resource type="Texture2D" uid="uid://cqe2kf2scb0jj" path="res://Assets/tree dark edge.png" id="7_x0vf6"]
+[ext_resource type="Texture2D" uid="uid://dlcbymfiqvkma" path="res://Assets/fence top.png" id="8_vd6y3"]
+[ext_resource type="Texture2D" uid="uid://dhnnf2mobia7n" path="res://Assets/tree light edge.png" id="9_qj4df"]
+[ext_resource type="Texture2D" uid="uid://b4nbp7tpyy8si" path="res://Assets/fence bottom.png" id="12_8bifg"]
+[ext_resource type="Texture2D" uid="uid://dtv5v3y2a0lgg" path="res://Assets/cat.png" id="13_r8boq"]
 
 [node name="Game" type="Node2D" unique_id=54124548]
 
 [node name="Visuals" type="Node2D" parent="." unique_id=355403943]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals" unique_id=2081939465]
 position = Vector2(160, 88)
 texture = ExtResource("1_5sg27")
+
+[node name="behind player" type="Node2D" parent="." unique_id=1236020727]
+
+[node name="behind grid" type="Sprite2D" parent="behind player" unique_id=1170858321]
+position = Vector2(160, 90)
+texture = ExtResource("2_bpu47")
+
+[node name="grid" type="Sprite2D" parent="behind player" unique_id=1655440001]
+position = Vector2(160, 90)
+texture = ExtResource("3_gcgb4")
+
+[node name="Shed" type="Sprite2D" parent="behind player" unique_id=1002506847]
+position = Vector2(160, 90)
+texture = ExtResource("4_8bifg")
+
+[node name="pond" type="Sprite2D" parent="behind player" unique_id=1822842851]
+position = Vector2(160, 90)
+texture = ExtResource("5_r8boq")
+
+[node name="grass above" type="Sprite2D" parent="behind player" unique_id=409443557]
+position = Vector2(160, 90)
+texture = ExtResource("6_fdp5g")
+
+[node name="tree dark edge" type="Sprite2D" parent="behind player" unique_id=1127864709]
+position = Vector2(141, 49)
+texture = ExtResource("7_x0vf6")
+
+[node name="tree dark edge2" type="Sprite2D" parent="behind player" unique_id=1420548300]
+position = Vector2(191, 34)
+texture = ExtResource("7_x0vf6")
+
+[node name="fence top" type="Sprite2D" parent="behind player" unique_id=1565705809]
+position = Vector2(160, 90)
+texture = ExtResource("8_vd6y3")
+
+[node name="tree light edge" type="Sprite2D" parent="behind player" unique_id=826073841]
+position = Vector2(166, 65)
+texture = ExtResource("9_qj4df")
 
 [node name="Grid" parent="." unique_id=991801364 instance=ExtResource("1_d3un6")]
 position = Vector2(96, 24)
@@ -19,5 +68,15 @@ position = Vector2(96, 24)
 
 [node name="Player" parent="Player" unique_id=767698206 instance=ExtResource("3_8xnxh")]
 position = Vector2(96, 24)
+
+[node name="above player" type="Node2D" parent="." unique_id=1546835875]
+
+[node name="fence bottom" type="Sprite2D" parent="above player" unique_id=1560654519]
+position = Vector2(160, 90)
+texture = ExtResource("12_8bifg")
+
+[node name="cat" type="Sprite2D" parent="above player" unique_id=1179113107]
+position = Vector2(160, 90)
+texture = ExtResource("13_r8boq")
 
 [editable path="Grid"]

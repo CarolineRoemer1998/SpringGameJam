@@ -13,7 +13,19 @@ func get_position_from_tile(tile: Vector2) -> Vector2:
 func get_tile_from_position(position: Vector2) -> Vector2:
 	return (position - Vector2(96-16, 24-16)) / 16
 
-func get_collision_on_area(_position: Vector2, _layer_mask, world : World2D) -> Array[Dictionary]:
+func check_for_collider_on_position(_position: Vector2, _layer_mask, world : World2D) -> Node:
+	var space = world.direct_space_state
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = _position
+	query.collision_mask = _layer_mask
+	query.collide_with_areas = true
+	var result = space.intersect_point(query, 1)
+	if not result.is_empty():
+		return result[0].collider
+	else:
+		return null
+
+func get_all_collisions_on_tile(_position: Vector2, _layer_mask, world : World2D) -> Array[Dictionary]:
 	var space = world.direct_space_state
 	var query = PhysicsPointQueryParameters2D.new()
 	query.position = _position

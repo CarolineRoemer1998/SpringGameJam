@@ -47,7 +47,7 @@ func move_player(delta: float):
 
 func handle_direction_input():
 	if Input.is_action_pressed("move_up"):
-		## TODO: check if tile is free (var col = Helper.get_collision_on_area(global_position, get_world_2d()))
+		## TODO: check if tile is free (var col = Helper.check_for_collider_on_position(global_position, get_world_2d()))
 		target_position = global_position + Vector2(0, -1*STEP_LENGTH_IN_PIXELS)
 	if Input.is_action_pressed("move_down"):
 		## TODO: check if tile is free
@@ -64,8 +64,21 @@ func handle_direction_input():
 func handle_action_input():
 	if Input.is_action_just_pressed("action_plant"):
 		if check_can_plant_on_current_tile():
+			print("planted seed")
 			SignalBus.seed_planted.emit(global_position, "Daisy") ## TODO: "Daisy" später zu enum oder ressource-type ändern
-
+			print("Planting Seed: Success!")
+		else:
+			print("Planting Seed: Failed!")
+	
+	if Input.is_action_just_pressed("action_collect"):
+		var plant_on_tile : Plant = Helper.check_for_collider_on_position(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d())
+		#print("--- ", plant_on_tile.current_phase)
+		if plant_on_tile != null:# and plant_on_tile.current_phase == Enums.plantStates.FULLY_GROWN:
+			SignalBus.flower_collected.emit(plant_on_tile)
+			print("Collecting Flower: Success!")
+		else:
+			print("Collecting Flower: Failed!")
+	
 func check_can_plant_on_current_tile():
-	var tile_has_plant = not Helper.get_collision_on_area(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d()).is_empty()
+	var tile_has_plant = Helper.check_for_collider_on_position(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d()) != null
 	return not tile_has_plant

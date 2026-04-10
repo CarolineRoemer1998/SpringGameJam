@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 SignalBus="*uid://b6hruy0wkn8fp"
 Enums="*uid://cug8ti8d8lpvf"
 Helper="*uid://cg0h6fvp3lr13"
+GameManager="*uid://1qxqmfr6bto3"
 
 [display]
 

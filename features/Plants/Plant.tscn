@@ -6,6 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t82jw"]
 size = Vector2(8, 8)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f32r6"]
+atlas = ExtResource("6_etvce")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_sq4ht"]
 atlas = ExtResource("6_etvce")
 region = Rect2(0, 0, 32, 32)
@@ -29,8 +33,16 @@ region = Rect2(128, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_dbjwr"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f32r6")
+}],
+"loop": false,
+"name": &"fully grown",
 "speed": 5.0
 }, {
 "frames": [{
@@ -49,7 +61,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s8pce")
 }],
-"loop": true,
+"loop": false,
 "name": &"growing",
 "speed": 5.0
 }]

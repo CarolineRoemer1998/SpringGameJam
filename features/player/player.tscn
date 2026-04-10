@@ -58,3 +58,4 @@ position = Vector2(0, 7)
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_fcb3x")
 animation = &"idle"
+autoplay = "idle"

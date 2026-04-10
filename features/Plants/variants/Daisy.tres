@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlantData" format=3 uid="uid://blak745amd86c"]
+
+[ext_resource type="Script" uid="uid://damt74uwewuib" path="res://features/Plants/PlantData.gd" id="1_m6xml"]
+
+[resource]
+script = ExtResource("1_m6xml")
+PlantName = "Daisy"
+last_grow_Phase = 3
+allergyPhase = 5
+metadata/_custom_type_script = "uid://damt74uwewuib"

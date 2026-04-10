@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bwyt2yv4c62bf"]
 
 [ext_resource type="PackedScene" uid="uid://c0cmie1w3ijox" path="res://features/Plants/Plant.tscn" id="1_10ro6"]
-[ext_resource type="Script" uid="uid://2wxt44s8bsuh" path="res://features/Plants/PlantData.gd" id="2_t8srs"]
 
 [node name="MarkusTestScene" type="Node2D" unique_id=1015138304]
 
 [node name="Plant" parent="." unique_id=843263416 instance=ExtResource("1_10ro6")]
-script = ExtResource("2_t8srs")
+position = Vector2(10.945, 16.67)

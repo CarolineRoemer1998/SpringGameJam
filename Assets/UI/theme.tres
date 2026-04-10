@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://tf532vcg407e"]
+
+[ext_resource type="FontFile" uid="uid://cl6rfllxeuo8w" path="res://Assets/UI/monogram.ttf" id="1_0qw6d"]
+
+[resource]
+Label/fonts/font = ExtResource("1_0qw6d")

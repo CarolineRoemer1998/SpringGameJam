@@ -17,17 +17,16 @@ var Stats = {
 
 func _ready() -> void:
 	SignalBus.stepped.connect(track_steps)
-	SignalBus.plant_collected.connect(track_plant_collection)
+	SignalBus.flower_collected.connect(track_plant_collection)
 	SignalBus.plant_changed_state.connect(track_plant_states)
 	SignalBus.sneezed.connect(track_sneezes)
-	SignalBus.plant_collected.connect(track_plant_collection)
 	
 func track_steps():
 	var steps = Stats.get("Steps")
 	steps += 1
 	Stats.set("Steps", steps)
 
-func track_plant_collection():
+func track_plant_collection(_flower:Plant):
 	var plants_collected = Stats.get("Plants Collected")
 	plants_collected += 1
 	Stats.set("Plants Collected", plants_collected)

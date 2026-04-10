@@ -1,9 +1,39 @@
 [gd_scene format=3 uid="uid://c6oott1jjxued"]
 
 [ext_resource type="Script" uid="uid://djug8mi5grtwy" path="res://features/pollen/pollen.gd" id="1_cwev2"]
+[ext_resource type="Texture2D" uid="uid://cgf7olex5gkho" path="res://Assets/pollen cloud.png" id="2_y5v4m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwev2"]
 size = Vector2(8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaj0k"]
+atlas = ExtResource("2_y5v4m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l51oq"]
+atlas = ExtResource("2_y5v4m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrpb3"]
+atlas = ExtResource("2_y5v4m")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwev2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaj0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l51oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrpb3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="Pollen" type="StaticBody2D" unique_id=75289140]
 collision_layer = 8
@@ -13,4 +43,7 @@ metadata/_custom_type_script = "uid://djug8mi5grtwy"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1930585620]
 shape = SubResource("RectangleShape2D_cwev2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1656837366]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1344345871]
+sprite_frames = SubResource("SpriteFrames_cwev2")
+autoplay = "default"
+frame_progress = 0.0034537183

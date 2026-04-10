@@ -1,3 +1,4 @@
+# SignalBus.gd
 extends Node
 
 signal stepped(global_psotion:Vector2)

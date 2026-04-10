@@ -1,3 +1,4 @@
+# GameManager.gd
 extends Node
 
 const RESOURCE_FLOWER_DAISY = preload("uid://blak745amd86c")
@@ -15,3 +16,9 @@ func _ready():
 func set_random_seed_type():
 	current_seed_type = flower_resource_types.pick_random()
 	## TODO: Visual ändern, um player zu zeigen, welchen seed er hat
+
+func get_and_use_current_seed() -> PlantData:
+	var result = current_seed_type.duplicate(true)
+	set_random_seed_type()
+	return result
+	

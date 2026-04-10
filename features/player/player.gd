@@ -47,19 +47,28 @@ func move_player(delta: float):
 
 func handle_direction_input():
 	if Input.is_action_pressed("move_up"):
-		## TODO: check if tile is free (var col = Helper.check_for_collider_on_position(global_position, get_world_2d()))
-		target_position = global_position + Vector2(0, -1*STEP_LENGTH_IN_PIXELS)
+		if check_can_walk_on_target_tile(Vector2(0, -1*STEP_LENGTH_IN_PIXELS)):
+			## TODO: check if tile is free (var col = Helper.check_for_collider_on_position(global_position, get_world_2d()))
+			target_position = global_position + Vector2(0, -1*STEP_LENGTH_IN_PIXELS)
 	if Input.is_action_pressed("move_down"):
-		## TODO: check if tile is free
-		target_position = global_position + Vector2(0, 1*STEP_LENGTH_IN_PIXELS)
+		if check_can_walk_on_target_tile(Vector2(0, 1*STEP_LENGTH_IN_PIXELS)):
+			## TODO: check if tile is free
+			target_position = global_position + Vector2(0, 1*STEP_LENGTH_IN_PIXELS)
 	if Input.is_action_pressed("move_left"):
-		## TODO: check if tile is free
-		target_position = global_position + Vector2(-1*STEP_LENGTH_IN_PIXELS, 0)
-		sprite.flip_h = true  
+		if check_can_walk_on_target_tile(Vector2(-1*STEP_LENGTH_IN_PIXELS, 0)):
+			## TODO: check if tile is free
+			target_position = global_position + Vector2(-1*STEP_LENGTH_IN_PIXELS, 0)
+			sprite.flip_h = true  
 	if Input.is_action_pressed("move_right"):
-		## TODO: check if tile is free
-		target_position = global_position + Vector2(1*STEP_LENGTH_IN_PIXELS, 0)
-		sprite.flip_h = false
+		if check_can_walk_on_target_tile(Vector2(1*STEP_LENGTH_IN_PIXELS, 0)):
+			## TODO: check if tile is free
+			target_position = global_position + Vector2(1*STEP_LENGTH_IN_PIXELS, 0)
+			sprite.flip_h = false
+
+func check_can_walk_on_target_tile(dir: Vector2):
+		var new_pos = global_position + dir
+		var is_free = Helper.check_for_collider_on_position(new_pos, (1 << Helper.LAYER_BIT_POLLEN), get_world_2d()) == null
+		return is_free
 
 func handle_action_input():
 	if Input.is_action_just_pressed("action_plant"):

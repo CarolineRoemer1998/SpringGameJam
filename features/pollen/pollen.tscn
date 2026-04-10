@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c6oott1jjxued"]
+
+[ext_resource type="Script" uid="uid://djug8mi5grtwy" path="res://features/pollen/pollen.gd" id="1_cwev2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwev2"]
+size = Vector2(8, 8)
+
+[node name="Pollen" type="StaticBody2D" unique_id=75289140]
+collision_layer = 8
+script = ExtResource("1_cwev2")
+metadata/_custom_type_script = "uid://djug8mi5grtwy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1930585620]
+shape = SubResource("RectangleShape2D_cwev2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1656837366]

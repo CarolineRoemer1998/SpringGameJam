@@ -78,7 +78,7 @@ shape = SubResource("RectangleShape2D_t82jw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1544294672]
 sprite_frames = SubResource("SpriteFrames_dbjwr")
-animation = &"growing"
+animation = &"dead"
 
 [node name="Control" type="Control" parent="." unique_id=742246800]
 layout_mode = 3

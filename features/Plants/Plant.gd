@@ -2,8 +2,8 @@ extends StaticBody2D
 class_name Plant
 
 @export var PlantName:String
-@export var last_grow_Phase:int=4
-@export var allergyPhase:int=6
+@export var last_grow_Phase:int=3
+@export var allergyPhase:int=5
 
 @onready var visual:AnimatedSprite2D = $AnimatedSprite2D
 @onready var progressLabel:Label = $Control/Panel
@@ -14,6 +14,7 @@ var current_phase:int = 0
 func _ready() -> void:
 	print("initial state: ", Enums.plantStates.find_key(plantState))
 	SignalBus.stepped.connect(on_stepped)
+	SignalBus.flower_collected.connect(get_picked)
 	
 	#this should probably go into a setup function
 	visual.set_animation("growing")
@@ -33,19 +34,19 @@ func on_stepped():
 			
 			# if current phase is smaller or equal last grow phase, change state to sprout
 			if current_phase <= last_grow_Phase:
-				print("if last grow phase true")
 				update_plant_state(Enums.plantStates.SPROUT)
 			
 			# if current phase is smaller than last grow phase and lower than allergy phase, change state to fully grown
 			if current_phase > last_grow_Phase && current_phase < allergyPhase:
-				print("if fully grown true")
 				update_plant_state(Enums.plantStates.FULLY_GROWN)
 			
+			
+		Enums.plantStates.FULLY_GROWN:
+			current_phase += 1
+			update_label()
 			# if current phase equals or is higher than allergy phase, change state appropriately, change state to allergies
 			if current_phase >= allergyPhase:
-				print("if last allergy phase true")
 				update_plant_state(Enums.plantStates.ALLERGIES)
-		
 		_:
 			print("no plant State match found")
 
@@ -74,7 +75,12 @@ func update_plant_state(state:Enums.plantStates):
 			visual.set_animation("fully grown")
 
 		Enums.plantStates.ALLERGIES:
+			visual.modulate = Color(1.5, 1.5, 0.0) # Temporary visual for allergical
 			print("Doing allergies, but no code yet")
+
+func get_picked(plant: Plant):
+	if plant == self:
+		queue_free()
 
 func update_label():
 	progressLabel.text = str(current_phase)

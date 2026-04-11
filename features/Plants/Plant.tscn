@@ -39,6 +39,7 @@ script = ExtResource("4_162j0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Label" parent="Control" unique_id=2012148202]
+visible = false
 layout_mode = 0
 offset_right = 23.0
 offset_bottom = 23.0
@@ -48,11 +49,16 @@ horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="GrowthProgressBar" type="ProgressBar" parent="Control" unique_id=333173988]
-layout_mode = 0
-offset_left = -7.0
-offset_top = 19.0
-offset_right = 7.0
-offset_bottom = 33.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35000002
+anchor_top = 0.3
+anchor_right = 0.35000002
+anchor_bottom = 0.3
+offset_left = -6.000001
+offset_top = 7.0
+offset_right = 5.999999
+offset_bottom = 21.0
 theme = SubResource("Theme_7yjhd")
 theme_override_font_sizes/font_size = 12
 value = 50.0

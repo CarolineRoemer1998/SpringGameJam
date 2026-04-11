@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c0cmie1w3ijox"]
 
 [ext_resource type="Script" uid="uid://2wxt44s8bsuh" path="res://features/Plants/Plant.gd" id="1_f32r6"]
+[ext_resource type="Resource" uid="uid://blak745amd86c" path="res://features/Plants/variants/Daisy.tres" id="2_7yjhd"]
 [ext_resource type="SpriteFrames" uid="uid://cvykwo7bppqcv" path="res://features/Plants/SpriteFramesPerType/SpriteFramesDaisy.tres" id="2_hk83q"]
 [ext_resource type="Theme" uid="uid://tf532vcg407e" path="res://Assets/UI/theme.tres" id="3_hk83q"]
+[ext_resource type="Script" uid="uid://b4rb4e22c1k57" path="res://features/Plants/Plant_UI.gd" id="4_162j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t82jw"]
 size = Vector2(8, 8)
@@ -10,9 +12,12 @@ size = Vector2(8, 8)
 [sub_resource type="LabelSettings" id="LabelSettings_t82jw"]
 font_size = 14
 
+[sub_resource type="Theme" id="Theme_7yjhd"]
+
 [node name="Plant" type="StaticBody2D" unique_id=1040648433]
 collision_layer = 4
 script = ExtResource("1_f32r6")
+plant_data = ExtResource("2_7yjhd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1805317987]
 shape = SubResource("RectangleShape2D_t82jw")
@@ -27,6 +32,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("3_hk83q")
+script = ExtResource("4_162j0")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Label" parent="Control" unique_id=2012148202]
 layout_mode = 0
@@ -36,3 +43,28 @@ text = "0"
 label_settings = SubResource("LabelSettings_t82jw")
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="GrowthProgressBar" type="ProgressBar" parent="Control" unique_id=333173988]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 19.0
+offset_right = 7.0
+offset_bottom = 33.0
+theme = SubResource("Theme_7yjhd")
+theme_override_font_sizes/font_size = 12
+value = 50.0
+show_percentage = false
+
+[node name="PollenProgressBar" type="ProgressBar" parent="Control" unique_id=1366728292]
+visible = false
+layout_mode = 0
+offset_left = -7.0
+offset_top = 19.0
+offset_right = 7.0
+offset_bottom = 24.0
+min_value = 1.0
+max_value = 4.0
+value = 4.0
+show_percentage = false
+
+[connection signal="updated_phase" from="." to="Control" method="_on_plant_updated_phase"]

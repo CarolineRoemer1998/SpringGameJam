@@ -11,6 +11,7 @@ enum PLANT_TYPE {Daisy, Sunflower}
 const pollen = preload("uid://c6oott1jjxued")
 var plantState: Enums.plantStates = Enums.plantStates.SPROUT
 var current_phase:int = 0
+signal updated_phase(phase:int)
 
 func _ready() -> void:
 	set_type()
@@ -36,6 +37,7 @@ func on_stepped(player_position):
 	match plantState:
 		Enums.plantStates.SPROUT:
 			current_phase += 1
+			updated_phase.emit(current_phase)
 			update_label()
 			
 			# if current phase is smaller or equal last grow phase, change state to sprout
@@ -49,6 +51,7 @@ func on_stepped(player_position):
 			
 		Enums.plantStates.FULLY_GROWN:
 			current_phase += 1
+			updated_phase.emit(current_phase)
 			update_label()
 			# if current phase equals or is higher than allergy phase, change state appropriately, change state to allergies
 			if current_phase >= plant_data.allergy_phase:

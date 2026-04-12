@@ -44,7 +44,6 @@ metadata/_custom_type_script = "uid://djug8mi5grtwy"
 shape = SubResource("RectangleShape2D_cwev2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1344345871]
-modulate = Color(1, 1, 1, 0.57254905)
 sprite_frames = SubResource("SpriteFrames_cwev2")
 autoplay = "default"
 frame_progress = 0.80720353

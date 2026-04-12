@@ -1,6 +1,11 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://dm1bhoci14lgd"]
 
+[ext_resource type="Texture2D" uid="uid://cyrdn5xg6x6ou" path="res://Assets/dead.png" id="1_6o6k8"]
 [ext_resource type="Texture2D" uid="uid://bvqp3mv5je4tu" path="res://Assets/Flowers/flowers spritesheet.png" id="1_bvvln"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjl2f"]
+atlas = ExtResource("1_6o6k8")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvvln"]
 atlas = ExtResource("1_bvvln")
@@ -24,7 +29,10 @@ region = Rect2(256, 0, 32, 32)
 
 [resource]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjl2f")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0

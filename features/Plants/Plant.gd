@@ -7,6 +7,7 @@ enum PLANT_TYPE {Daisy, Tulip, Sunflower}
 
 @onready var visual:AnimatedSprite2D = $AnimatedSprite2D
 @onready var progressLabel:Label = $Control/Panel
+@onready var control: Control = $Control
 
 const pollen = preload("uid://c6oott1jjxued")
 var plantState: Enums.plantStates = Enums.plantStates.SPROUT
@@ -49,6 +50,7 @@ func on_stepped(player_position):
 			
 			
 		Enums.plantStates.FULLY_GROWN:
+			modulate = Color(2.0, 1.0, 1.0)
 			current_phase += 1
 			updated_phase.emit(current_phase)
 			update_label()
@@ -82,7 +84,9 @@ func update_plant_state(state:Enums.plantStates):
 			print("current frame:", visual.get_frame())
 		
 		Enums.plantStates.DEAD:
+			global_position[1] += 2
 			visual.set_animation("dead")
+			control.visible = false
 			print("set animation to dead")
 	
 		Enums.plantStates.FULLY_GROWN:

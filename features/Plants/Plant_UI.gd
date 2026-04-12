@@ -7,7 +7,7 @@ extends Control
 func _ready() -> void:
 	growth_progress_bar.set_value_no_signal(0)
 	growth_progress_bar.min_value = 0
-	growth_progress_bar.max_value = plant.plant_data.allergy_phase
+	growth_progress_bar.max_value = plant.plant_data.last_grow_phase+1
 
 func _on_plant_updated_phase(phase: int) -> void:
 	growth_progress_bar.set_value(phase)
@@ -17,6 +17,7 @@ func _on_plant_updated_phase(phase: int) -> void:
 		Enums.plantStates.SPROUT:
 			growth_progress_bar.self_modulate = Color(1.0, 1.0, 0.0, 1.0)
 		Enums.plantStates.FULLY_GROWN:
+			growth_progress_bar.set_value_no_signal(0)
 			growth_progress_bar.self_modulate = Color(0.0, 1.0, 0.0, 1.0)
 		Enums.plantStates.ALLERGIES:
 			print("deleting myself")

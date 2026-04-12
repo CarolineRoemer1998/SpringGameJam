@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://csfko7cn5qk25"]
+[gd_scene format=3 uid="uid://cls073n1e02ek"]
 
 [ext_resource type="Script" uid="uid://chmhbyf2cylif" path="res://Assets/UI/stats_screen.gd" id="1_el3vs"]
 [ext_resource type="Theme" uid="uid://tf532vcg407e" path="res://Assets/UI/theme.tres" id="1_jcsfh"]
@@ -21,6 +21,7 @@ offset_bottom = 81.0
 layout_mode = 2
 
 [node name="Steps" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1450269475]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_jcsfh")
 text = "Steps"
@@ -41,6 +42,7 @@ theme = ExtResource("1_jcsfh")
 text = "Sneezes"
 
 [node name="Score?" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=110893612]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_jcsfh")
 text = "Score?"
@@ -49,6 +51,7 @@ text = "Score?"
 layout_mode = 2
 
 [node name="Steps_Stat" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=704285302]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_jcsfh")
 text = "0"
@@ -69,6 +72,7 @@ theme = ExtResource("1_jcsfh")
 text = "0"
 
 [node name="Score?_Stat" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=128309745]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_jcsfh")
 text = "0"

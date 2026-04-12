@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b0gmhawh2e20e" path="res://features/player/player.gd" id="1_sjcu7"]
 [ext_resource type="Texture2D" uid="uid://cko0d7hna76qx" path="res://Assets/Player/player animation.png" id="2_emvbc"]
+[ext_resource type="AudioStream" uid="uid://dy861n10kqvio" path="res://Sound/Harvest.wav" id="3_emvbc"]
+[ext_resource type="AudioStream" uid="uid://d2dni5kjy5ogo" path="res://Sound/Step.wav" id="4_i250s"]
+[ext_resource type="AudioStream" uid="uid://cbjvlj6moam4u" path="res://Sound/Sneeze.mp3" id="5_6xbq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcb3x"]
 size = Vector2(8, 8)
@@ -194,3 +197,20 @@ animation = &"sneeze"
 autoplay = "idle"
 frame = 4
 frame_progress = 1.0
+
+[node name="AudioPlayerPlant" type="AudioStreamPlayer2D" parent="." unique_id=1310781240]
+stream = ExtResource("3_emvbc")
+volume_db = 12.0
+pitch_scale = 1.38
+
+[node name="AudioPlayerHarvest" type="AudioStreamPlayer2D" parent="." unique_id=270408814]
+stream = ExtResource("3_emvbc")
+volume_db = 12.0
+
+[node name="AudioPlayerStep" type="AudioStreamPlayer2D" parent="." unique_id=1947377456]
+stream = ExtResource("4_i250s")
+volume_db = 24.0
+
+[node name="AudioPlayerSneeze" type="AudioStreamPlayer2D" parent="." unique_id=385827510]
+stream = ExtResource("5_6xbq4")
+volume_db = 0.5

@@ -4,6 +4,10 @@ class_name Player
 @export var starting_tile := Vector2(5, 1)
 
 @onready var sprite = $Visuals/AnimatedSprite2D
+@onready var audio_player_plant: AudioStreamPlayer2D = $AudioPlayerPlant
+@onready var audio_player_harvest: AudioStreamPlayer2D = $AudioPlayerHarvest
+@onready var audio_player_step: AudioStreamPlayer2D = $AudioPlayerStep
+@onready var audio_player_sneeze: AudioStreamPlayer2D = $AudioPlayerSneeze
 
 const STEP_LENGTH_IN_PIXELS = 16
 const SPEED := 100
@@ -61,32 +65,35 @@ func move_player(delta: float):
 func handle_direction_input():
 	if Input.is_action_pressed("move_up"):
 		if check_field_has_pollen(Vector2(0, -1*STEP_LENGTH_IN_PIXELS)):
-			sprite.play("sneeze")
+			sneeze()
 		else:
 			## TODO: check if tile is free (var col = Helper.check_for_collider_on_position(global_position, get_world_2d()))
 			target_position = global_position + Vector2(0, -1*STEP_LENGTH_IN_PIXELS)
 			current_dir = "up"
 	if Input.is_action_pressed("move_down"):
 		if check_field_has_pollen(Vector2(0, 1*STEP_LENGTH_IN_PIXELS)):
-			sprite.play("sneeze")
+			sneeze()
 		else:
 			## TODO: check if tile is free
 			target_position = global_position + Vector2(0, 1*STEP_LENGTH_IN_PIXELS)
 			current_dir = "down"
 	if Input.is_action_pressed("move_left"):
 		if check_field_has_pollen(Vector2(-1*STEP_LENGTH_IN_PIXELS, 0)):
-			sprite.play("sneeze")
+			sneeze()
 		else:
 			## TODO: check if tile is free
 			target_position = global_position + Vector2(-1*STEP_LENGTH_IN_PIXELS, 0)
 			current_dir = "left"
 	if Input.is_action_pressed("move_right"):
 		if check_field_has_pollen(Vector2(1*STEP_LENGTH_IN_PIXELS, 0)):
-			sprite.play("sneeze")
+			sneeze()
 		else:
 			## TODO: check if tile is free
 			target_position = global_position + Vector2(1*STEP_LENGTH_IN_PIXELS, 0)
 			current_dir = "right"
+	if target_position != global_position:
+		audio_player_step.pitch_scale = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0].pick_random()
+		audio_player_step.play()
 
 func check_field_has_pollen(dir: Vector2):
 		var new_pos = global_position + dir
@@ -102,6 +109,8 @@ func handle_action_input():
 func plant_seed():
 	if check_can_plant_on_current_tile():
 		SignalBus.seed_planted.emit(global_position, "Daisy") ## TODO: "Daisy" später zu enum oder ressource-type ändern
+		audio_player_plant.pitch_scale = [1.2, 1.4, 1.6, 1.8, 2.0, 2.2].pick_random()
+		audio_player_plant.play()
 		print("Planting Seed: Success!")
 	else:
 		print("Planting Seed: Failed!")
@@ -109,6 +118,7 @@ func plant_seed():
 func pick_flower():
 	var flower_on_tile : Plant = Helper.check_for_collider_on_position(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d())
 	if flower_on_tile != null and flower_on_tile.plantState == Enums.plantStates.FULLY_GROWN:
+		audio_player_harvest.play()
 		SignalBus.flower_collected.emit(flower_on_tile)
 		print("Collecting Flower: Success!")
 	else:
@@ -117,3 +127,9 @@ func pick_flower():
 func check_can_plant_on_current_tile():
 	var tile_has_plant = Helper.check_for_collider_on_position(global_position, (1 << Helper.LAYER_BIT_PLANT), get_world_2d()) != null
 	return not tile_has_plant
+
+func sneeze():
+	sprite.play("sneeze")
+	if not audio_player_sneeze.playing:
+		audio_player_sneeze.pitch_scale = [0.9, 0.95, 1.0, 1.05, 1.1].pick_random()
+		audio_player_sneeze.play()

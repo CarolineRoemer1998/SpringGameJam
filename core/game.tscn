@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" path="res://Assets/UI/stats_screen.tscn" id="13_8bifg"]
 [ext_resource type="Texture2D" uid="uid://dtv5v3y2a0lgg" path="res://Assets/environment/cat.png" id="13_r8boq"]
 [ext_resource type="PackedScene" path="res://Assets/UI/tutorial.tscn" id="14_r8boq"]
+[ext_resource type="AudioStream" uid="uid://dl3rr1u4t8886" path="res://Sound/BGM.mp3" id="15_fdp5g"]
 
 [node name="Game" type="Node2D" unique_id=54124548]
 
@@ -98,5 +99,9 @@ offset_left = 160.0
 offset_top = 88.0
 offset_right = 160.0
 offset_bottom = 88.0
+
+[node name="AudioPlayerBGM" type="AudioStreamPlayer2D" parent="." unique_id=748170201]
+stream = ExtResource("15_fdp5g")
+autoplay = true
 
 [editable path="Grid"]

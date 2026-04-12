@@ -10,6 +10,7 @@ const SPEED := 100
 const STEP_DURATION_IN_SECONDS := 0.75
 
 var delta_time := 0.0
+var current_dir := "down"
 var target_position := Vector2.ZERO:
 	set(value):
 		if value[0] < Grid.GRID_X_MIN:
@@ -35,35 +36,49 @@ func _physics_process(delta):
 		handle_action_input()
 
 func move_player(delta: float):
-	sprite.play("walk") 
+	var anim_name = "walk_" + current_dir
+	if sprite.animation != anim_name:
+		sprite.play(anim_name)
+
 	delta_time += delta
 	var weight = delta_time / STEP_DURATION_IN_SECONDS
 	global_position = global_position.lerp(target_position, weight)
-	if global_position.distance_to(target_position) <= 2:
+
+	if global_position.distance_to(target_position) <= 0.5:
 		global_position = target_position
-		sprite.play("idle")
 		delta_time = 0.0
 		SignalBus.stepped.emit(global_position)
+		#for looks: check if player is still pressing the movement key, signal aber vroher abfeuern
+		var is_any_key_pressed = Input.is_action_pressed("move_up") or \
+								Input.is_action_pressed("move_down") or \
+								Input.is_action_pressed("move_left") or \
+								Input.is_action_pressed("move_right")
+		if not is_any_key_pressed:
+			sprite.play("idle")
+		else:
+			handle_direction_input()
 
 func handle_direction_input():
 	if Input.is_action_pressed("move_up"):
 		if check_can_walk_on_target_tile(Vector2(0, -1*STEP_LENGTH_IN_PIXELS)):
 			## TODO: check if tile is free (var col = Helper.check_for_collider_on_position(global_position, get_world_2d()))
 			target_position = global_position + Vector2(0, -1*STEP_LENGTH_IN_PIXELS)
+			current_dir = "up"
 	if Input.is_action_pressed("move_down"):
 		if check_can_walk_on_target_tile(Vector2(0, 1*STEP_LENGTH_IN_PIXELS)):
 			## TODO: check if tile is free
 			target_position = global_position + Vector2(0, 1*STEP_LENGTH_IN_PIXELS)
+			current_dir = "down"
 	if Input.is_action_pressed("move_left"):
 		if check_can_walk_on_target_tile(Vector2(-1*STEP_LENGTH_IN_PIXELS, 0)):
 			## TODO: check if tile is free
 			target_position = global_position + Vector2(-1*STEP_LENGTH_IN_PIXELS, 0)
-			sprite.flip_h = true  
+			current_dir = "left"
 	if Input.is_action_pressed("move_right"):
 		if check_can_walk_on_target_tile(Vector2(1*STEP_LENGTH_IN_PIXELS, 0)):
 			## TODO: check if tile is free
 			target_position = global_position + Vector2(1*STEP_LENGTH_IN_PIXELS, 0)
-			sprite.flip_h = false
+			current_dir = "right"
 
 func check_can_walk_on_target_tile(dir: Vector2):
 		var new_pos = global_position + dir

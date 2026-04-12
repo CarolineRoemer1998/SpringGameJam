@@ -5,7 +5,7 @@ const pollen = preload("uid://c6oott1jjxued")
 var directions = [Vector2(0,-1) , Vector2(0,1) , Vector2(1,0) , Vector2(-1,0)]
 
 var counter:int = 0
-var spread_time:int = 5
+var spread_time:int = 8
 
 func _ready() -> void:
 	SignalBus.stepped.connect(on_stepped)

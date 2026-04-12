@@ -23,12 +23,11 @@ func _ready() -> void:
 	#this should probably go into a setup function
 	visual.set_animation("growing")
 	visual.set_frame(0)
-	
-	#on_stepped()
 
 func set_type():
 	plant_data = GameManager.get_and_use_current_seed().duplicate(true)
 	visual.sprite_frames = plant_data.sprite_frames.duplicate(true)
+	control.set_growth_panel()
 
 func on_stepped(player_position):
 	if player_position == global_position and plantState==Enums.plantStates.SPROUT:
@@ -37,8 +36,6 @@ func on_stepped(player_position):
 	match plantState:
 		Enums.plantStates.SPROUT:
 			current_phase += 1
-			updated_phase.emit(current_phase)
-			update_label()
 			
 			# if current phase is smaller or equal last grow phase, change state to sprout
 			if current_phase <= plant_data.last_grow_phase:
@@ -47,16 +44,19 @@ func on_stepped(player_position):
 			# if current phase is smaller than last grow phase and lower than allergy phase, change state to fully grown
 			if current_phase > plant_data.last_grow_phase && current_phase < plant_data.allergy_phase:
 				update_plant_state(Enums.plantStates.FULLY_GROWN)
+				modulate = Color(2.0, 1.0, 1.0)
 			
-			
-		Enums.plantStates.FULLY_GROWN:
-			modulate = Color(2.0, 1.0, 1.0)
-			current_phase += 1
 			updated_phase.emit(current_phase)
 			update_label()
+		
+		Enums.plantStates.FULLY_GROWN:
+			current_phase += 1
 			# if current phase equals or is higher than allergy phase, change state appropriately, change state to allergies
 			if current_phase >= plant_data.allergy_phase:
 				update_plant_state(Enums.plantStates.ALLERGIES)
+			
+			updated_phase.emit(current_phase)
+			update_label()
 
 		Enums.plantStates.ALLERGIES:
 			pass

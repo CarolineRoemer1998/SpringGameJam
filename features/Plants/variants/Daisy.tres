@@ -7,6 +7,6 @@
 script = ExtResource("1_m6xml")
 plant_name = "Daisy"
 sprite_frames = ExtResource("2_lxbya")
-last_grow_phase = 3
-allergy_phase = 7
+last_grow_phase = 4
+allergy_phase = 10
 metadata/_custom_type_script = "uid://damt74uwewuib"

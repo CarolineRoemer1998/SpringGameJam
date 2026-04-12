@@ -27,10 +27,6 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_xh283")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8pce"]
-atlas = ExtResource("1_xh283")
-region = Rect2(128, 0, 32, 32)
-
 [resource]
 animations = [{
 "frames": [{
@@ -61,9 +57,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yumax")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s8pce")
 }],
 "loop": false,
 "name": &"growing",

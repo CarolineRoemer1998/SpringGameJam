@@ -14,6 +14,22 @@ region = Rect2(0, 0, 48, 48)
 atlas = ExtResource("2_emvbc")
 region = Rect2(48, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rlqq"]
+atlas = ExtResource("2_emvbc")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yptax"]
+atlas = ExtResource("2_emvbc")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72p1y"]
+atlas = ExtResource("2_emvbc")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kvd7"]
+atlas = ExtResource("2_emvbc")
+region = Rect2(240, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcb3x"]
 atlas = ExtResource("2_emvbc")
 region = Rect2(144, 0, 48, 48)
@@ -59,9 +75,21 @@ animations = [{
 "name": &"idle",
 "speed": 2.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"plant",
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rlqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yptax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72p1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kvd7")
+}],
+"loop": false,
+"name": &"interact",
 "speed": 5.0
 }, {
 "frames": [],
@@ -127,5 +155,7 @@ position = Vector2(0, 7)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1744544012]
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_fcb3x")
-animation = &"walk_up"
+animation = &"interact"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0

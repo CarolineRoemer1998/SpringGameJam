@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://de0c03g0mgxtn"]
+
+[ext_resource type="Theme" uid="uid://tf532vcg407e" path="res://Assets/UI/theme.tres" id="1_1f2x5"]
+[ext_resource type="Script" uid="uid://dynbaii2l4ix6" path="res://Assets/UI/tutorial.gd" id="1_8nsp4"]
+
+[node name="Tutorial" type="Control" unique_id=1660803926]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8nsp4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=396751522]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -25.0
+offset_right = 51.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8157679, 0.37921125, 0.1664303, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=972645355]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -22.5
+offset_right = 49.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1f2x5")
+text = "Plant flowers with F
+Pick flowers with E
+Beware of your allergies!"
+
+[node name="Timer" type="Timer" parent="." unique_id=347336832]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

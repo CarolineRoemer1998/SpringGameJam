@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlantData" format=3 uid="uid://bjvj80v8300qf"]
+
+[ext_resource type="Script" uid="uid://damt74uwewuib" path="res://features/Plants/PlantData.gd" id="1_057yc"]
+[ext_resource type="SpriteFrames" uid="uid://bf3xagaisqoi6" path="res://features/Plants/SpriteFramesPerType/SpriteFramesSunflower.tres" id="2_057yc"]
+
+[resource]
+script = ExtResource("1_057yc")
+plant_name = "Sunflower"
+plant_type = 1
+sprite_frames = ExtResource("2_057yc")
+last_grow_phase = 7
+allergy_phase = 10
+metadata/_custom_type_script = "uid://damt74uwewuib"

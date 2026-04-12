@@ -1,7 +1,7 @@
 extends StaticBody2D
 class_name Plant
 
-enum PLANT_TYPE {Daisy, Sunflower}
+enum PLANT_TYPE {Daisy, Tulip, Sunflower}
 
 @export var plant_data: PlantData
 

@@ -36,9 +36,10 @@ func track_plant_collection(_flower:Plant):
 func track_plant_states(plant: Plant, state: Enums.plantStates):
 	match state:
 		Enums.plantStates.DEAD:
+			print("setting stats for dead")
 			var dead_plants = Stats.get("Dead Plants")
 			dead_plants += 1
-			Stats.set("Steps", dead_plants)
+			Stats.set("Dead Plants", dead_plants)
 			SignalBus.updated_stats.emit(Stats)
 	
 func track_sneezes():

@@ -32,7 +32,6 @@ func set_type():
 func on_stepped(player_position):
 	if player_position == global_position and plantState==Enums.plantStates.SPROUT:
 		update_plant_state(Enums.plantStates.DEAD)
-		SignalBus.plant_changed_state.emit(self, Enums.plantStates.DEAD)
 	
 	match plantState:
 		Enums.plantStates.SPROUT:

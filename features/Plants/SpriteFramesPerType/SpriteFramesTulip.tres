@@ -1,0 +1,56 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dm1bhoci14lgd"]
+
+[ext_resource type="Texture2D" uid="uid://bvqp3mv5je4tu" path="res://Assets/Flowers/flowers spritesheet.png" id="1_bvvln"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvvln"]
+atlas = ExtResource("1_bvvln")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o6k8"]
+atlas = ExtResource("1_bvvln")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkuce"]
+atlas = ExtResource("1_bvvln")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su0kb"]
+atlas = ExtResource("1_bvvln")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5xj4"]
+atlas = ExtResource("1_bvvln")
+region = Rect2(256, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvvln")
+}],
+"loop": true,
+"name": &"fully grown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o6k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkuce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su0kb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5xj4")
+}],
+"loop": true,
+"name": &"growing",
+"speed": 5.0
+}]

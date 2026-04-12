@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dlcbymfiqvkma" path="res://Assets/environment/fence top.png" id="8_vd6y3"]
 [ext_resource type="Texture2D" uid="uid://dhnnf2mobia7n" path="res://Assets/environment/tree light edge.png" id="9_qj4df"]
 [ext_resource type="Texture2D" uid="uid://b4nbp7tpyy8si" path="res://Assets/environment/fence bottom.png" id="12_8bifg"]
+[ext_resource type="PackedScene" uid="uid://csfko7cn5qk25" path="res://Assets/UI/stats_screen.tscn" id="13_8bifg"]
 [ext_resource type="Texture2D" uid="uid://dtv5v3y2a0lgg" path="res://Assets/environment/cat.png" id="13_r8boq"]
+[ext_resource type="PackedScene" uid="uid://de0c03g0mgxtn" path="res://Assets/UI/tutorial.tscn" id="14_r8boq"]
 
 [node name="Game" type="Node2D" unique_id=54124548]
 
@@ -76,5 +78,25 @@ texture = ExtResource("12_8bifg")
 [node name="cat" type="Sprite2D" parent="above player" unique_id=1179113107]
 position = Vector2(160, 90)
 texture = ExtResource("13_r8boq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1624083057]
+offset_left = 240.0
+offset_top = 14.0
+offset_right = 318.0
+offset_bottom = 106.0
+color = Color(0.6052743, 0.6052743, 0.6052743, 0.34117648)
+
+[node name="StatsScreen" parent="ColorRect" unique_id=1749995791 instance=ExtResource("13_8bifg")]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 2.0
+
+[node name="Tutorial" parent="." unique_id=1660803926 instance=ExtResource("14_r8boq")]
+offset_left = 160.0
+offset_top = 88.0
+offset_right = 160.0
+offset_bottom = 88.0
 
 [editable path="Grid"]

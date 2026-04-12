@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://csfko7cn5qk25"]
+
+[ext_resource type="Script" uid="uid://chmhbyf2cylif" path="res://Assets/UI/stats_screen.gd" id="1_el3vs"]
+[ext_resource type="Theme" uid="uid://tf532vcg407e" path="res://Assets/UI/theme.tres" id="1_jcsfh"]
+
+[node name="StatsScreen" type="Control" unique_id=1749995791]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_el3vs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=123044900]
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 81.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1092811558]
+layout_mode = 2
+
+[node name="Steps" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1450269475]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "Steps"
+
+[node name="Flowers Collected" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1168763627]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "Flowers picked "
+
+[node name="Sad Flowers" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1251000234]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "Sad Flowers"
+
+[node name="Sneezes" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1389141481]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "Sneezes"
+
+[node name="Score?" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=110893612]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "Score?"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=285050359]
+layout_mode = 2
+
+[node name="Steps_Stat" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=704285302]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "0"
+
+[node name="Flowers Collected_Stat" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=491511573]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "0"
+
+[node name="Sad Flowers_Stat" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=648782169]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "0"
+
+[node name="Sneezes_Stat" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1198309111]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "0"
+
+[node name="Score?_Stat" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=128309745]
+layout_mode = 2
+theme = ExtResource("1_jcsfh")
+text = "0"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlantData" format=3 uid="uid://ckdo6ftmpa600"]
+
+[ext_resource type="Script" uid="uid://damt74uwewuib" path="res://features/Plants/PlantData.gd" id="1_lap8p"]
+[ext_resource type="SpriteFrames" uid="uid://dm1bhoci14lgd" path="res://features/Plants/SpriteFramesPerType/SpriteFramesTulip.tres" id="2_lap8p"]
+
+[resource]
+script = ExtResource("1_lap8p")
+plant_name = "Tulip"
+plant_type = 1
+sprite_frames = ExtResource("2_lap8p")
+last_grow_phase = 5
+allergy_phase = 9
+metadata/_custom_type_script = "uid://damt74uwewuib"

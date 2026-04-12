@@ -30,11 +30,31 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("2_emvbc")
 region = Rect2(240, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcb3x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m333p"]
+atlas = ExtResource("2_emvbc")
+region = Rect2(1056, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ncrl"]
+atlas = ExtResource("2_emvbc")
+region = Rect2(1104, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m8b1"]
+atlas = ExtResource("2_emvbc")
+region = Rect2(1152, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhvub"]
+atlas = ExtResource("2_emvbc")
+region = Rect2(1200, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3ag6"]
+atlas = ExtResource("2_emvbc")
+region = Rect2(1056, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emvbc"]
 atlas = ExtResource("2_emvbc")
 region = Rect2(336, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_emvbc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrnek"]
 atlas = ExtResource("2_emvbc")
 region = Rect2(432, 0, 48, 48)
 
@@ -42,23 +62,23 @@ region = Rect2(432, 0, 48, 48)
 atlas = ExtResource("2_emvbc")
 region = Rect2(864, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7mbft"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt1oa"]
 atlas = ExtResource("2_emvbc")
 region = Rect2(960, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kt1oa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_47rrt"]
 atlas = ExtResource("2_emvbc")
 region = Rect2(672, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k34i2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5tpd"]
 atlas = ExtResource("2_emvbc")
 region = Rect2(768, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_47rrt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftx3j"]
 atlas = ExtResource("2_emvbc")
 region = Rect2(528, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uqugw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_57lbp"]
 atlas = ExtResource("2_emvbc")
 region = Rect2(624, 0, 48, 48)
 
@@ -92,17 +112,32 @@ animations = [{
 "name": &"interact",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m333p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ncrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m8b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhvub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3ag6")
+}],
+"loop": false,
 "name": &"sneeze",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fcb3x")
+"texture": SubResource("AtlasTexture_emvbc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_emvbc")
+"texture": SubResource("AtlasTexture_lrnek")
 }],
 "loop": true,
 "name": &"walk_down",
@@ -113,7 +148,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_y2cyt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7mbft")
+"texture": SubResource("AtlasTexture_kt1oa")
 }],
 "loop": true,
 "name": &"walk_left",
@@ -121,10 +156,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kt1oa")
+"texture": SubResource("AtlasTexture_47rrt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k34i2")
+"texture": SubResource("AtlasTexture_d5tpd")
 }],
 "loop": true,
 "name": &"walk_right",
@@ -132,10 +167,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_47rrt")
+"texture": SubResource("AtlasTexture_ftx3j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uqugw")
+"texture": SubResource("AtlasTexture_57lbp")
 }],
 "loop": true,
 "name": &"walk_up",
@@ -155,7 +190,5 @@ position = Vector2(0, 7)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1744544012]
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_fcb3x")
-animation = &"interact"
+animation = &"idle"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0

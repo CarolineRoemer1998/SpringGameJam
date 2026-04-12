@@ -19,7 +19,6 @@ func on_stepped(position:Vector2):
 
 func spread_pollen():
 	for i in directions:
-		print(i)
 		var new_pollen = pollen.instantiate()
 		add_child(new_pollen)
 		new_pollen.global_position = global_position + i * tile

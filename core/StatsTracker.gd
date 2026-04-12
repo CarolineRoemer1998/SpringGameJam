@@ -26,12 +26,14 @@ func track_steps(position: Vector2):
 	steps += 1
 	Stats.set("Steps", steps)
 	SignalBus.updated_stats.emit(Stats)
+	calculate_score()
 
 func track_plant_collection(_flower:Plant):
 	var plants_collected = Stats.get("Plants Collected")
 	plants_collected += 1
 	Stats.set("Plants Collected", plants_collected)
 	SignalBus.updated_stats.emit(Stats)
+	calculate_score()
 
 func track_plant_states(plant: Plant, state: Enums.plantStates):
 	match state:
@@ -41,9 +43,17 @@ func track_plant_states(plant: Plant, state: Enums.plantStates):
 			dead_plants += 1
 			Stats.set("Dead Plants", dead_plants)
 			SignalBus.updated_stats.emit(Stats)
+			calculate_score()
 	
 func track_sneezes():
 	var sneezes = Stats.get("Sneezes")
 	sneezes += 1
 	Stats.set("Sneezes", sneezes)
+	SignalBus.updated_stats.emit(Stats)
+	
+func calculate_score():
+	var flowers = Stats.get("Plants Collected") * 100
+	var dead_flowers = Stats.get("Dead Plants") * 50
+	var score = (flowers + dead_flowers) / Stats.get("Steps")
+	Stats.set("Final Score", score)
 	SignalBus.updated_stats.emit(Stats)

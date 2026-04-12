@@ -44,7 +44,7 @@ func on_stepped(player_position):
 			# if current phase is smaller than last grow phase and lower than allergy phase, change state to fully grown
 			if current_phase > plant_data.last_grow_phase && current_phase < plant_data.allergy_phase:
 				update_plant_state(Enums.plantStates.FULLY_GROWN)
-				modulate = Color(2.0, 1.0, 1.0)
+				#modulate = Color(2.0, 1.0, 1.0)
 			
 			updated_phase.emit(current_phase)
 			update_label()
@@ -93,7 +93,7 @@ func update_plant_state(state:Enums.plantStates):
 			visual.set_animation("fully grown")
 
 		Enums.plantStates.ALLERGIES:
-			visual.modulate = Color(1.5, 1.5, 0.0) # Temporary visual for allergical
+			#visual.modulate = Color(1.5, 1.5, 0.0) # Temporary visual for allergical
 			var new_pollen = pollen.instantiate()
 			add_child(new_pollen)
 			new_pollen.global_position = global_position

@@ -8,3 +8,4 @@ signal flower_collected(flower: Plant)
 signal sneezed()
 
 signal updated_stats(stats:Dictionary)
+signal new_seed(seed: Plant.PLANT_TYPE)

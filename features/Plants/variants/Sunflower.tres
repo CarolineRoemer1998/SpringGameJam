@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_057yc")
 plant_name = "Sunflower"
-plant_type = 1
+plant_type = 2
 sprite_frames = ExtResource("2_057yc")
 last_grow_phase = 8
 allergy_phase = 14

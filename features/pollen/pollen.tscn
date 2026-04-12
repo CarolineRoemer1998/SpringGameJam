@@ -36,6 +36,7 @@ animations = [{
 }]
 
 [node name="Pollen" type="StaticBody2D" unique_id=75289140]
+z_index = 1
 collision_layer = 8
 script = ExtResource("1_cwev2")
 metadata/_custom_type_script = "uid://djug8mi5grtwy"

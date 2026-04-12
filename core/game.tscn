@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://b4nbp7tpyy8si" path="res://Assets/environment/fence bottom.png" id="12_8bifg"]
 [ext_resource type="PackedScene" path="res://Assets/UI/stats_screen.tscn" id="13_8bifg"]
 [ext_resource type="Texture2D" uid="uid://dtv5v3y2a0lgg" path="res://Assets/environment/cat.png" id="13_r8boq"]
+[ext_resource type="Script" uid="uid://bypmrvtuxt1wx" path="res://core/NextSeedWindow.gd" id="14_qj4df"]
 [ext_resource type="PackedScene" path="res://Assets/UI/tutorial.tscn" id="14_r8boq"]
+[ext_resource type="Theme" uid="uid://tf532vcg407e" path="res://Assets/UI/theme.tres" id="15_bl4du"]
 [ext_resource type="AudioStream" uid="uid://dl3rr1u4t8886" path="res://Sound/BGM.mp3" id="15_fdp5g"]
 
 [node name="Game" type="Node2D" unique_id=54124548]
@@ -85,7 +87,7 @@ offset_left = 240.0
 offset_top = 14.0
 offset_right = 318.0
 offset_bottom = 106.0
-color = Color(0.6052743, 0.6052743, 0.6052743, 0.34117648)
+color = Color(0.23, 0.18745, 0.1449, 0.49411765)
 
 [node name="StatsScreen" parent="ColorRect" unique_id=1749995791 instance=ExtResource("13_8bifg")]
 layout_mode = 1
@@ -93,6 +95,39 @@ offset_left = 2.0
 offset_top = 2.0
 offset_right = 2.0
 offset_bottom = 2.0
+
+[node name="NextSeedWindow" type="ColorRect" parent="." unique_id=1782914293]
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 40.0
+offset_bottom = 88.0
+color = Color(0.23, 0.18745, 0.1449, 0.49411765)
+script = ExtResource("14_qj4df")
+
+[node name="Control" type="Control" parent="NextSeedWindow" unique_id=416010282]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="NextSeedWindow/Control" unique_id=1873880001]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 24.0
+offset_bottom = 10.0
+theme = ExtResource("15_bl4du")
+text = "Next"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="NextSeedWindow/Control" unique_id=978605941]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
+expand_mode = 5
 
 [node name="Tutorial" parent="." unique_id=1660803926 instance=ExtResource("14_r8boq")]
 offset_left = 160.0

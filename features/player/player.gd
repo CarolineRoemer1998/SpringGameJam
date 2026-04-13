@@ -145,9 +145,10 @@ func check_can_walk():
 	const tile:float = 16
 	for i in directions:
 		var pos = global_position + i * tile
+		var dir = i*STEP_LENGTH_IN_PIXELS
 		#check if the target tile is on field and check if it has pollen
 		# if all return true, th eplayer can not walk
-		if check_if_field_is_on_grid(pos) and not check_field_has_pollen(pos):
+		if check_if_field_is_on_grid(pos) and not check_field_has_pollen(dir):
 			direction_bools.append(true)
 		else:
 			direction_bools.append(false)

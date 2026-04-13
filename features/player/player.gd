@@ -134,6 +134,7 @@ func check_can_plant_on_current_tile():
 
 func sneeze():
 	sprite.play("sneeze")
+	SignalBus.sneezed.emit()
 	if not audio_player_sneeze.playing:
 		audio_player_sneeze.pitch_scale = [0.9, 0.95, 1.0, 1.05, 1.1].pick_random()
 		audio_player_sneeze.play()

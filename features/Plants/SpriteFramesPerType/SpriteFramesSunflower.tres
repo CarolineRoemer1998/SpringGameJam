@@ -2,14 +2,27 @@
 
 [ext_resource type="Texture2D" uid="uid://bvqp3mv5je4tu" path="res://Assets/Flowers/flowers spritesheet.png" id="1_7djk4"]
 [ext_resource type="Texture2D" uid="uid://cyrdn5xg6x6ou" path="res://Assets/dead.png" id="1_igm40"]
+[ext_resource type="Texture2D" uid="uid://bq3wymq36gnve" path="res://Assets/flowers-Sheet.png" id="2_0w10g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0drgd"]
 atlas = ExtResource("1_igm40")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7djk4"]
-atlas = ExtResource("1_7djk4")
-region = Rect2(448, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_smn7w"]
+atlas = ExtResource("2_0w10g")
+region = Rect2(768, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tgub"]
+atlas = ExtResource("2_0w10g")
+region = Rect2(800, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loxiu"]
+atlas = ExtResource("2_0w10g")
+region = Rect2(832, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vee4v"]
+atlas = ExtResource("2_0w10g")
+region = Rect2(864, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igm40"]
 atlas = ExtResource("1_7djk4")
@@ -39,7 +52,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7djk4")
+"texture": SubResource("AtlasTexture_smn7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tgub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loxiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vee4v")
 }],
 "loop": false,
 "name": &"fully grown",

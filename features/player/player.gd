@@ -30,13 +30,18 @@ var target_position := Vector2.ZERO:
 			value[1] = Grid.GRID_Y_MAX
 		target_position = value
 
+var is_game_over := false
 
 func _ready():
 	global_position = Helper.get_position_from_tile(starting_tile)
 	target_position = global_position
 
 func _physics_process(delta):
-	if global_position != target_position:
+	if is_game_over:
+		if Input.is_action_just_pressed("ui_accept"):
+			get_tree().reload_current_scene()
+		return
+	elif global_position != target_position:
 		move_player(delta)
 	else:
 		handle_direction_input()
@@ -67,28 +72,28 @@ func move_player(delta: float):
 
 
 func handle_direction_input():
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_just_pressed("move_up"):
 		if check_field_has_pollen(Vector2(0, -1*STEP_LENGTH_IN_PIXELS)):
 			sneeze()
 		else:
 			## TODO: check if tile is free (var col = Helper.check_for_collider_on_position(global_position, get_world_2d()))
 			target_position = global_position + Vector2(0, -1*STEP_LENGTH_IN_PIXELS)
 			current_dir = "up"
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_just_pressed("move_down"):
 		if check_field_has_pollen(Vector2(0, 1*STEP_LENGTH_IN_PIXELS)):
 			sneeze()
 		else:
 			## TODO: check if tile is free
 			target_position = global_position + Vector2(0, 1*STEP_LENGTH_IN_PIXELS)
 			current_dir = "down"
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_just_pressed("move_left"):
 		if check_field_has_pollen(Vector2(-1*STEP_LENGTH_IN_PIXELS, 0)):
 			sneeze()
 		else:
 			## TODO: check if tile is free
 			target_position = global_position + Vector2(-1*STEP_LENGTH_IN_PIXELS, 0)
 			current_dir = "left"
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_just_pressed("move_right"):
 		if check_field_has_pollen(Vector2(1*STEP_LENGTH_IN_PIXELS, 0)):
 			sneeze()
 		else:
@@ -159,6 +164,7 @@ func check_can_walk():
 		can_walk = false
 		print("game over")
 		SignalBus.game_over.emit()
+		is_game_over = true
 	else:
 		can_walk = true
 

@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://blak745amd86c" path="res://features/Plants/variants/Daisy.tres" id="2_7yjhd"]
 [ext_resource type="SpriteFrames" uid="uid://cvykwo7bppqcv" path="res://features/Plants/SpriteFramesPerType/SpriteFramesDaisy.tres" id="2_hk83q"]
 [ext_resource type="Theme" uid="uid://tf532vcg407e" path="res://Assets/UI/theme.tres" id="3_hk83q"]
-[ext_resource type="Script" uid="uid://b4rb4e22c1k57" path="res://features/Plants/Plant_UI.gd" id="4_162j0"]
+[ext_resource type="Script" path="res://features/Plants/Plant_UI.gd" id="4_162j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t82jw"]
 size = Vector2(8, 8)
@@ -25,7 +25,9 @@ shape = SubResource("RectangleShape2D_t82jw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1544294672]
 position = Vector2(0, -10)
 sprite_frames = ExtResource("2_hk83q")
-animation = &"dead"
+animation = &"fully grown"
+autoplay = "fully grown"
+frame_progress = 0.5664886
 
 [node name="Control" type="Control" parent="." unique_id=742246800]
 layout_mode = 3

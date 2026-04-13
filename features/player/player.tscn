@@ -142,7 +142,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lrnek")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_down",
 "speed": 7.0
 }, {
@@ -153,7 +153,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kt1oa")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_left",
 "speed": 7.0
 }, {
@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d5tpd")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_right",
 "speed": 7.0
 }, {
@@ -175,7 +175,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_57lbp")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_up",
 "speed": 7.0
 }]
@@ -194,10 +194,8 @@ position = Vector2(0, 10)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1744544012]
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_fcb3x")
-animation = &"sneeze"
+animation = &"walk_up"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="AudioPlayerPlant" type="AudioStreamPlayer2D" parent="." unique_id=1310781240]
 stream = ExtResource("3_emvbc")

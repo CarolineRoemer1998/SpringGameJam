@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://b4nbp7tpyy8si" path="res://Assets/environment/fence bottom.png" id="12_8bifg"]
 [ext_resource type="PackedScene" uid="uid://cls073n1e02ek" path="res://Assets/UI/stats_screen.tscn" id="13_8bifg"]
 [ext_resource type="Texture2D" uid="uid://dtv5v3y2a0lgg" path="res://Assets/environment/cat.png" id="13_r8boq"]
-[ext_resource type="Script" uid="uid://bypmrvtuxt1wx" path="res://core/NextSeedWindow.gd" id="14_qj4df"]
-[ext_resource type="PackedScene" path="res://Assets/UI/tutorial.tscn" id="14_r8boq"]
+[ext_resource type="Script" path="res://core/NextSeedWindow.gd" id="14_qj4df"]
+[ext_resource type="PackedScene" uid="uid://de0c03g0mgxtn" path="res://Assets/UI/tutorial.tscn" id="14_r8boq"]
 [ext_resource type="Theme" uid="uid://tf532vcg407e" path="res://Assets/UI/theme.tres" id="15_bl4du"]
 [ext_resource type="AudioStream" uid="uid://dl3rr1u4t8886" path="res://Sound/BGM.mp3" id="15_fdp5g"]
 [ext_resource type="Texture2D" uid="uid://w1lcgvwkh0v5" path="res://Assets/Icons/IconDaisy.png" id="15_qj4df"]
@@ -84,9 +84,9 @@ position = Vector2(160, 90)
 texture = ExtResource("13_r8boq")
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1102103408]
-offset_left = 235.99998
-offset_top = 15.0
-offset_right = 275.0
+offset_left = 236.0
+offset_top = 19.0
+offset_right = 272.0
 offset_bottom = 55.0
 color = Color(0.5, 0.3565, 0.29000002, 1)
 
@@ -96,7 +96,6 @@ offset_left = 2.0000153
 offset_top = 2.0
 offset_right = 34.000015
 offset_bottom = 34.0
-scale = Vector2(1.0957497, 1.109907)
 color = Color(0.76, 0.54188, 0.44080004, 1)
 script = ExtResource("14_qj4df")
 
@@ -126,27 +125,59 @@ offset_bottom = 36.0
 texture = ExtResource("15_qj4df")
 expand_mode = 5
 
-[node name="ColorRect3" type="ColorRect" parent="." unique_id=822543547]
-offset_left = 236.0
-offset_top = 57.0
-offset_right = 318.0
-offset_bottom = 117.0
+[node name="Control" type="Control" parent="." unique_id=645236081]
+z_index = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverScreen" type="ColorRect" parent="Control" unique_id=822543547]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -30.0
+offset_right = 41.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.5, 0.3565, 0.29000002, 1)
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect3" unique_id=1624083057]
+[node name="ColorRect" type="ColorRect" parent="Control/GameOverScreen" unique_id=1624083057]
 layout_mode = 0
 offset_left = 2.0000153
 offset_top = 1.9999962
 offset_right = 80.000015
-offset_bottom = 57.999996
+offset_bottom = 78.0
 color = Color(0.76, 0.54188, 0.44080004, 1)
 
-[node name="StatsScreen" parent="ColorRect3/ColorRect" unique_id=1749995791 instance=ExtResource("13_8bifg")]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/GameOverScreen/ColorRect" unique_id=1627845757]
 layout_mode = 1
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 2.0
-offset_bottom = 2.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.9999847
+offset_right = -4.0000153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="Control/GameOverScreen/ColorRect/VBoxContainer" unique_id=1777299707]
+layout_mode = 2
+theme = ExtResource("15_bl4du")
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="StatsScreen" parent="Control/GameOverScreen/ColorRect/VBoxContainer" unique_id=1749995791 instance=ExtResource("13_8bifg")]
+layout_mode = 2
 
 [node name="Tutorial" parent="." unique_id=1660803926 instance=ExtResource("14_r8boq")]
 offset_left = 160.0

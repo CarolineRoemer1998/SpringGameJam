@@ -9,6 +9,9 @@ class_name Player
 @onready var audio_player_step: AudioStreamPlayer2D = $AudioPlayerStep
 @onready var audio_player_sneeze: AudioStreamPlayer2D = $AudioPlayerSneeze
 
+@onready var can_walk_timer: Timer = $CanWalkTimer
+
+
 const STEP_LENGTH_IN_PIXELS = 16
 const SPEED := 100
 const STEP_DURATION_IN_SECONDS := 0.75
@@ -61,6 +64,7 @@ func move_player(delta: float):
 			sprite.play("idle")
 		else:
 			handle_direction_input()
+
 
 func handle_direction_input():
 	if Input.is_action_pressed("move_up"):
@@ -133,3 +137,34 @@ func sneeze():
 	if not audio_player_sneeze.playing:
 		audio_player_sneeze.pitch_scale = [0.9, 0.95, 1.0, 1.05, 1.1].pick_random()
 		audio_player_sneeze.play()
+		
+func check_can_walk():
+	var can_walk:bool
+	var directions = [Vector2(0,-1) , Vector2(0,1) , Vector2(1,0) , Vector2(-1,0)]
+	var direction_bools:Array
+	const tile:float = 16
+	for i in directions:
+		var pos = global_position + i * tile
+		#check if the target tile is on field and check if it has pollen
+		# if all return true, th eplayer can not walk
+		if check_if_field_is_on_grid(pos) and not check_field_has_pollen(pos):
+			direction_bools.append(true)
+		else:
+			direction_bools.append(false)
+
+	# check if every direction returned false
+	if direction_bools.all(is_false):
+		can_walk = false
+		print("game over")
+	else:
+		can_walk = true
+
+	print("can walk? ", can_walk)
+	return can_walk
+
+func is_false(Bool:bool):
+	if Bool == false:
+		return true
+
+func check_if_field_is_on_grid(pos: Vector2) -> bool:
+	return pos[0] >= Grid.GRID_X_MIN and pos[0] <= Grid.GRID_X_MAX and pos[1] >= Grid.GRID_Y_MIN and pos[1] <= Grid.GRID_Y_MAX

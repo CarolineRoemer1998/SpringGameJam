@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cls073n1e02ek" path="res://Assets/UI/stats_screen.tscn" id="13_8bifg"]
 [ext_resource type="Texture2D" uid="uid://dtv5v3y2a0lgg" path="res://Assets/environment/cat.png" id="13_r8boq"]
 [ext_resource type="Script" uid="uid://bypmrvtuxt1wx" path="res://core/NextSeedWindow.gd" id="14_qj4df"]
-[ext_resource type="PackedScene" path="res://Assets/UI/tutorial.tscn" id="14_r8boq"]
+[ext_resource type="PackedScene" uid="uid://de0c03g0mgxtn" path="res://Assets/UI/tutorial.tscn" id="14_r8boq"]
 [ext_resource type="Theme" uid="uid://tf532vcg407e" path="res://Assets/UI/theme.tres" id="15_bl4du"]
 [ext_resource type="AudioStream" uid="uid://dl3rr1u4t8886" path="res://Sound/BGM.mp3" id="15_fdp5g"]
 [ext_resource type="Texture2D" uid="uid://w1lcgvwkh0v5" path="res://Assets/Icons/IconDaisy.png" id="15_qj4df"]

@@ -10,7 +10,7 @@ func _ready() -> void:
 	SignalBus.updated_stats.connect(update_visuals)
 
 func update_visuals(stats: Dictionary):
-	print(stats)
+	#print(stats)
 	steps_stat.set_text(str(stats.get("Steps")))
 	flowers_collected_stat.set_text(str(stats.get("Plants Collected")))
 	sad_flowers_stat.set_text(str(stats.get("Dead Plants")))

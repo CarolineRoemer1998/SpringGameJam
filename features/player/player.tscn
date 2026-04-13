@@ -215,3 +215,8 @@ volume_db = 24.0
 [node name="AudioPlayerSneeze" type="AudioStreamPlayer2D" parent="." unique_id=385827510]
 stream = ExtResource("5_6xbq4")
 volume_db = 0.5
+
+[node name="CanWalkTimer" type="Timer" parent="." unique_id=2024842929]
+autostart = true
+
+[connection signal="timeout" from="CanWalkTimer" to="." method="check_can_walk"]

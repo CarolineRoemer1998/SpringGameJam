@@ -157,6 +157,7 @@ func check_can_walk():
 	if direction_bools.all(is_false):
 		can_walk = false
 		print("game over")
+		SignalBus.game_over.emit()
 	else:
 		can_walk = true
 

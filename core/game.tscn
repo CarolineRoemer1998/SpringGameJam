@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://lem1ogoa4kp7"]
 
+[ext_resource type="Script" uid="uid://bx4t1x8d51iqa" path="res://core/Game.gd" id="1_bl4du"]
 [ext_resource type="PackedScene" uid="uid://f3gsxpb5ahmf" path="res://features/grid/grid.tscn" id="1_d3un6"]
 [ext_resource type="Texture2D" uid="uid://blmuknbxgaj12" path="res://Assets/environment/behind grid.png" id="2_bpu47"]
 [ext_resource type="PackedScene" uid="uid://bhcp3xje2ivai" path="res://features/player/player.tscn" id="3_8xnxh"]
@@ -20,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://w1lcgvwkh0v5" path="res://Assets/Icons/IconDaisy.png" id="15_qj4df"]
 
 [node name="Game" type="Node2D" unique_id=54124548]
+script = ExtResource("1_bl4du")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=355403943]
 visible = false
@@ -125,7 +127,8 @@ offset_bottom = 36.0
 texture = ExtResource("15_qj4df")
 expand_mode = 5
 
-[node name="Control" type="Control" parent="." unique_id=645236081]
+[node name="GameOverScreen" type="Control" parent="." unique_id=645236081]
+visible = false
 z_index = 4
 layout_mode = 3
 anchors_preset = 15
@@ -136,7 +139,7 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameOverScreen" type="ColorRect" parent="Control" unique_id=822543547]
+[node name="ColorRect" type="ColorRect" parent="GameOverScreen" unique_id=822543547]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,14 +147,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -41.0
-offset_top = -30.0
+offset_top = -40.0
 offset_right = 41.0
-offset_bottom = 50.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5, 0.3565, 0.29000002, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Control/GameOverScreen" unique_id=1624083057]
+[node name="ColorRect" type="ColorRect" parent="GameOverScreen/ColorRect" unique_id=1624083057]
 layout_mode = 0
 offset_left = 2.0000153
 offset_top = 1.9999962
@@ -159,7 +162,7 @@ offset_right = 80.000015
 offset_bottom = 78.0
 color = Color(0.76, 0.54188, 0.44080004, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/GameOverScreen/ColorRect" unique_id=1627845757]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverScreen/ColorRect/ColorRect" unique_id=1627845757]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -170,13 +173,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 4
 
-[node name="Label" type="Label" parent="Control/GameOverScreen/ColorRect/VBoxContainer" unique_id=1777299707]
+[node name="Label" type="Label" parent="GameOverScreen/ColorRect/ColorRect/VBoxContainer" unique_id=1777299707]
 layout_mode = 2
 theme = ExtResource("15_bl4du")
 text = "GAME OVER"
 horizontal_alignment = 1
 
-[node name="StatsScreen" parent="Control/GameOverScreen/ColorRect/VBoxContainer" unique_id=1749995791 instance=ExtResource("13_8bifg")]
+[node name="StatsScreen" parent="GameOverScreen/ColorRect/ColorRect/VBoxContainer" unique_id=1749995791 instance=ExtResource("13_8bifg")]
 layout_mode = 2
 
 [node name="Tutorial" parent="." unique_id=1660803926 instance=ExtResource("14_r8boq")]

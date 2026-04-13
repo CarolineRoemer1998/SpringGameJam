@@ -9,3 +9,4 @@ signal sneezed()
 
 signal updated_stats(stats:Dictionary)
 signal new_seed(seed: Plant.PLANT_TYPE)
+signal game_over
